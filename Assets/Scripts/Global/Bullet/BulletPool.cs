@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class BulletPool : MonoBehaviour
 {
     private GameObject _bullet;
