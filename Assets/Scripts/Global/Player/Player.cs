@@ -4,7 +4,11 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour, Controls.IPlayerActions
 {
     #region SHOOTER VARIABLES
-    [SerializeField] private int _ammoCount = 8; // TODO
+    private PlayerShooting _playerShooting;
+    #endregion
+
+    #region LOOK VARIABLES
+    private PlayerLook _playerLook;
     #endregion
 
     #region MOVEMENT VARIABLES
@@ -17,25 +21,25 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _playerShooting = GetComponent<PlayerShooting>();
+        _playerLook = GetComponent<PlayerLook>();
     }
 
     void FixedUpdate()
     {
         float velocity = _speed * Time.deltaTime;
         _rb.AddForce(_direction * velocity, ForceMode2D.Impulse);
-
-        //float velocity = _speed * Time.deltaTime;
-        //this.transform.Translate(_direction * velocity);
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
+    #region PLAYER INPUT
+    public void OnAttack(InputAction.CallbackContext ctx)
     {
-        // throw new System.NotImplementedException();
-        _ammoCount--;
+        _playerShooting.Shoot();
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
         _direction = ctx.ReadValue<Vector2>();
     }
+    #endregion
 }
