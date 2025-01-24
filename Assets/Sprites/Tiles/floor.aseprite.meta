@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 484bad28c1a792044a634dc2c37608f3
+guid: 74592f2132f19c040ac1b33be47f3677
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: burbujita
+  - name: floor
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 16
-      height: 16
-    spriteID: 82e9676949ed70d4f84623928fd7b4d4
+      width: 48
+      height: 96
+    spriteID: 20c26d82e5ca38d42831e4d2817fc622
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 2062782468
-    name: burbujita
+    guid: 1776456860
+    name: floor
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: burbujita
+    - name: floor
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 16
-        height: 16
-      spriteId: 82e9676949ed70d4f84623928fd7b4d4
+        width: 48
+        height: 96
+      spriteId: 20c26d82e5ca38d42831e4d2817fc622
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
-  previousTextureSize: {x: 32, y: 32}
+  canvasSize: {x: 48, y: 96}
+  previousTextureSize: {x: 64, y: 128}
