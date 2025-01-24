@@ -194,6 +194,18 @@ public class MapLoader : MonoBehaviour
             for (int y = 0; y < boundaries.height; y++)
             {
                 Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
+                if (tilemap.GetTile(pos) != wallTile && tilemap.GetTile(pos + topV) == wallTile && tilemap.GetTile(pos + bottomV) == wallTile)
+                {
+                    tilemap.SetTile(pos, wallTile);
+                }
+            }
+        }
+
+        for (int x = 0; x < boundaries.width; x++)
+        {
+            for (int y = 0; y < boundaries.height; y++)
+            {
+                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
                 if (tilemap.GetTile(pos) == null && tilemap.GetTile(pos + topV) == wallTile)
                 {
                     tilemap.SetTile(pos, wallTile2D);
