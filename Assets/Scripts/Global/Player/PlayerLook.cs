@@ -58,6 +58,7 @@ public class PlayerLook : MonoBehaviour
     private void AimWithJoystick()
     {
         Vector2 aimDirection = Gamepad.current.rightStick.ReadValue();
+        Debug.Log(aimDirection);
         RotateGun(aimDirection);
     }
 
