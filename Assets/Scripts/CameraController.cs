@@ -73,7 +73,7 @@ public class CameraController : MonoBehaviour
                 Vector3 vc = new Vector3(vec.x, vec.y, 0);
                 float dist = Vector3.Distance(vc, pos);
 
-                if (dist <= 50)
+                if (dist <= 60)
                 {
                     closest = vc;
                     break;
