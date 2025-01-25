@@ -45,7 +45,6 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         }
         else if (other.CompareTag("Bullet"))
         {
-            Debug.Log("HI");
             Bullet bullet = other.gameObject.GetComponent<Bullet>();
 
             if (bullet.BulleteCanHeal())
@@ -94,6 +93,11 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     public void OnMove(InputAction.CallbackContext ctx)
     {
         _direction = ctx.ReadValue<Vector2>();
+    }
+
+    public void OnDash(InputAction.CallbackContext ctx)
+    {
+        Debug.Log("HI");
     }
     #endregion
 }

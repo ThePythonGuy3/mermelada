@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a69b38c8dd6a8a44db5f005893845ace
+guid: 0594f266168a93343b672182912a6c7f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: arrow
+  - name: mboss_attack_cortocircuit
     originalName: 
-    pivot: {x: 0.5, y: -0.4}
+    pivot: {x: 0.5, y: -0.3}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 9
-      height: 5
-    spriteID: 607257ee1642454438b9e15a03af0246
+      width: 32
+      height: 10
+    spriteID: 1dca5961b9f03404faa5a195f7ce4500
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 22413753
-    name: arrow
+    guid: 1923204894
+    name: mboss_attack_cortocircuit
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: arrow
+    - name: mboss_attack_cortocircuit
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 2
-        width: 9
-        height: 5
-      spriteId: 607257ee1642454438b9e15a03af0246
+        y: 3
+        width: 32
+        height: 10
+      spriteId: 1dca5961b9f03404faa5a195f7ce4500
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 9, y: 9}
-  previousTextureSize: {x: 32, y: 16}
+  canvasSize: {x: 32, y: 16}
+  previousTextureSize: {x: 64, y: 32}
