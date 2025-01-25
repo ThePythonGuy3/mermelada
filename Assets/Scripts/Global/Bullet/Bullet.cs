@@ -11,6 +11,7 @@ using UnityEngine.Tilemaps;
 public class Bullet : MonoBehaviour
 {
     // [SerializeField] private int _damage = 10;
+    public float timeHealthToAdd = 10f;
 
     [SerializeField] private float _bulletMaxDistance = 5.0f;
 
@@ -18,13 +19,17 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _animationDuration;
 
     // Time to wait after movement animation is completed
-    [SerializeField] private float _timeWaitEnd = 2f;
+    [SerializeField] private float _timeWaitEnd = 5f;
+
+    private bool bulletCanHeal = false;
 
     public BulletPool BulletPool;
 
     #region BULLET MOVEMENT
     public void StartBulletMovement()
     {
+        bulletCanHeal = false;
+
         Vector3 start = transform.position;
         Quaternion rotation = transform.rotation;
 
@@ -49,6 +54,7 @@ public class Bullet : MonoBehaviour
     IEnumerator BulletMovement(Vector3 start, Vector3 target)
     {
         yield return StartCoroutine(LerpPosition(start, target, _animationDuration));
+        bulletCanHeal = true;
         yield return StartCoroutine(WaitInPosition(_timeWaitEnd));
         DestroyBullet();
 
@@ -77,26 +83,26 @@ public class Bullet : MonoBehaviour
     }
     #endregion
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Wall"))
-        {
-            DestroyBullet();
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Wall"))
         {
             DestroyBullet();
         }
-        // TODO
+        /*else if (other.CompareTag(""))
+        {
+            // TODO
+        }
         /*else if (other.CompareTag("Enemy") || other.CompareTag("Player"))
         {
             DestroyBullet();
             // other.GetComponent<Character>().LoseHealth(_damage);
         }*/
+    }
+
+    public bool BulleteCanHeal()
+    {
+        return bulletCanHeal;
     }
 
     public void DestroyBullet()
