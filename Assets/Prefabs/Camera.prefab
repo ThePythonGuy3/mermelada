@@ -375,6 +375,9 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   mapLoader: {fileID: 0}
   allowTransition: 1
+  focusPoints: []
+  moveSpeed: 2
+  waitTime: 2
 --- !u!1 &8269351692713344921
 GameObject:
   m_ObjectHideFlags: 0
