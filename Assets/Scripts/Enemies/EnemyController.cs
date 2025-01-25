@@ -4,6 +4,8 @@ public class EnemyController : MonoBehaviour
 {
     public Attack[] attackList;
 
+    public Vector3 spawnRoomCenter;
+
     public void ReceiveAttack()
     {
 

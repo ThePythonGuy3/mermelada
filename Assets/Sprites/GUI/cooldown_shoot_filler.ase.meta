@@ -1,3 +1,4 @@
+
 fileFormatVersion: 2
 guid: 2a6dd1684cf0c824cb779922c4902ff6
 ScriptedImporter:
@@ -135,7 +136,7 @@ ScriptedImporter:
       y: 4
       width: 6
       height: 22
-    spriteID: 806cad8c7b8db6244a3c7ddf65dbd8af
+    spriteID: a6cb8f6bdc8c56c42bf584117650f002
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,7 +162,7 @@ ScriptedImporter:
         y: 1
         width: 6
         height: 22
-      spriteId: 806cad8c7b8db6244a3c7ddf65dbd8af
+      spriteId: a6cb8f6bdc8c56c42bf584117650f002
     linkedCells: []
     parentIndex: -1
   platformSettings:
