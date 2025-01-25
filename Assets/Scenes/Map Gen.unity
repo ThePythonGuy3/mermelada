@@ -245,6 +245,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6118367535792156314, guid: 474f0a37ab1d96745ab0140344f83eef, type: 3}
+      propertyPath: initialRoom
+      value: 
+      objectReference: {fileID: 4900000, guid: 8b5eadd565fe1b04e93e4fc22b46664e, type: 3}
+    - target: {fileID: 6118367535792156314, guid: 474f0a37ab1d96745ab0140344f83eef, type: 3}
       propertyPath: miniBossLeft1
       value: 
       objectReference: {fileID: 4900000, guid: dc579b49b9cf81d4181f91d9c8423748, type: 3}
