@@ -70,7 +70,7 @@ MonoBehaviour:
   miniBossRight1: {fileID: 4900000, guid: 877a3febec1b3804f83783d5bd67d81e, type: 3}
   miniBossRight2: {fileID: 4900000, guid: 209ee632debf4a447b239b3f03a35dd1, type: 3}
   initialRoom: {fileID: 4900000, guid: 8b5eadd565fe1b04e93e4fc22b46664e, type: 3}
-  maxDepth: 7
+  maxDepth: 8
   rareFloorChance: 0.05
   rareWallChance: 0.104
   surface: {fileID: 0}
