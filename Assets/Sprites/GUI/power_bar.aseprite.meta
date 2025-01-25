@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4beef4a929438e41807d25479ed6818
+guid: 01bf3beae19490c46a24a65af2b61647
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bar_filler
+  - name: power_bar
     originalName: 
-    pivot: {x: 0.5974026, y: -0.16666667}
+    pivot: {x: 0.48387095, y: -0.10344827}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 77
-      height: 18
-    spriteID: 9329d5d09c1f07844b928306a726afbe
+      width: 62
+      height: 29
+    spriteID: 96ac6207e13c4474ead10268c45322fa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -465277994
-    name: bar_filler
+    guid: 1896702837
+    name: power_bar
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bar_filler
+    - name: power_bar
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 2
         y: 3
-        width: 77
-        height: 18
-      spriteId: 9329d5d09c1f07844b928306a726afbe
+        width: 62
+        height: 29
+      spriteId: 96ac6207e13c4474ead10268c45322fa
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 96, y: 24}
-  previousTextureSize: {x: 128, y: 32}
+  canvasSize: {x: 64, y: 32}
+  previousTextureSize: {x: 128, y: 64}
