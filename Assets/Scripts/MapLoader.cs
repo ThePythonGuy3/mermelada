@@ -13,6 +13,10 @@ public class MapLoader : MonoBehaviour
     [SerializeField] private RuleTile floorTile;
     [SerializeField] private RuleTile defaultFloorTile;
 
+    [Header("Special Rooms")]
+    [SerializeField] private TextAsset bossRoom;
+    [SerializeField] private TextAsset miniBossLeft1, miniBossLeft2, miniBossRight1, miniBossRight2;
+
     [Header("Config")]
     [SerializeField] private int maxDepth = 7;
 

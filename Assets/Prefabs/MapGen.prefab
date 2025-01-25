@@ -59,12 +59,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 8948773420863727986}
-  wallTile: {fileID: 11400000, guid: 82a9be08c744fb845991ab211d761ac9, type: 2}
+  wallTile: {fileID: 11400000, guid: 6882d7ff7c6f6924fbca86e9a8967626, type: 2}
+  randomizedWallTile: {fileID: 11400000, guid: 54f1617d5be5c424aaffa6b78e44f51f, type: 2}
   wallTile2D: {fileID: 11400000, guid: a0f941d71fbc61f459ff6625d25b6205, type: 2}
   floorTile: {fileID: 11400000, guid: b12f6a190791b404ea83658fbad56c67, type: 2}
   defaultFloorTile: {fileID: 11400000, guid: 2586f2bffe3ad4245b9b7a035bd6861f, type: 2}
+  bossRoom: {fileID: 0}
+  miniBossLeft1: {fileID: 0}
+  miniBossLeft2: {fileID: 0}
+  miniBossRight1: {fileID: 0}
+  miniBossRight2: {fileID: 0}
   maxDepth: 7
   rareFloorChance: 0.05
+  rareWallChance: 0.104
 --- !u!1 &8492690810993395847
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,37 +206,47 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 2.002861
+      e00: -1.5898886e+29
       e01: 0
       e02: NaN
-      e03: 6.9111905e-35
-      e10: 5.9e-43
+      e03: 7.258557e+36
+      e10: 7.57e-43
       e11: 0
       e12: 0
-      e13: 2.02e-43
+      e13: 2.48e-43
       e20: -3.7303388e+22
-      e21: 6.9111905e-35
-      e22: 2.002861
-      e23: -0.000000013331153
+      e21: 7.258557e+36
+      e22: -1.5898886e+29
+      e23: 6.5304913e-26
       e30: 4.5911e-41
-      e31: 2.02e-43
-      e32: 5.9e-43
-      e33: 5.87e-43
+      e31: 2.48e-43
+      e32: 7.57e-43
+      e33: 7.55e-43
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   - m_RefCount: 0
-    m_Data: {r: -0.0000000036387107, g: -0.0000000036387107, b: -0.0000000036387107, a: -0.0000000036387107}
+    m_Data: {r: 6.2355e-41, g: 6.2355e-41, b: 6.2355e-41, a: 6.2355e-41}
   - m_RefCount: 0
-    m_Data: {r: -0.0000000133311175, g: -0.0000000133311175, b: -0.0000000133311175, a: -0.0000000133311175}
+    m_Data: {r: 6.2355e-41, g: 6.2355e-41, b: 6.2355e-41, a: 6.2355e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -13, y: -9, z: 0}
-  m_Size: {x: 26, y: 21, z: 1}
+  m_Origin: {x: -13, y: -14, z: 0}
+  m_Size: {x: 91, y: 26, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
