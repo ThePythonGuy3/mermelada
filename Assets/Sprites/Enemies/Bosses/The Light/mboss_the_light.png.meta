@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_the_light_0: 6633386455362276541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
