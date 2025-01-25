@@ -94,10 +94,5 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     {
         _direction = ctx.ReadValue<Vector2>();
     }
-
-    public void OnDash(InputAction.CallbackContext ctx)
-    {
-        Debug.Log("HI");
-    }
     #endregion
 }

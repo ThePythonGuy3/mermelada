@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638734017067650799
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -135,11 +135,7 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-<<<<<<< HEAD
-    spriteID: b011fc3cce6e3234aaad6068518400b6
-=======
-    spriteID: 418f0810509f2c7488d44ebf88697ea7
->>>>>>> 13ac50ed9cd40651cbf57c87424b51120f4253cb
+    spriteID: cf92af12c5329f44faf1935b64bb42cd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -160,11 +156,7 @@ ScriptedImporter:
       y: 4
       width: 12
       height: 12
-<<<<<<< HEAD
-    spriteID: 7b3192bb4d6d1524b9101e1e5ec7e36d
-=======
-    spriteID: 9ef7a282818dbba4ba38b48e35ec2010
->>>>>>> 13ac50ed9cd40651cbf57c87424b51120f4253cb
+    spriteID: bcfb837cedb08e344a3ef5243bca5bab
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -190,11 +182,7 @@ ScriptedImporter:
         y: 2
         width: 8
         height: 8
-<<<<<<< HEAD
-      spriteId: b011fc3cce6e3234aaad6068518400b6
-=======
-      spriteId: 418f0810509f2c7488d44ebf88697ea7
->>>>>>> 13ac50ed9cd40651cbf57c87424b51120f4253cb
+      spriteId: cf92af12c5329f44faf1935b64bb42cd
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -203,11 +191,7 @@ ScriptedImporter:
         y: 0
         width: 12
         height: 12
-<<<<<<< HEAD
-      spriteId: 7b3192bb4d6d1524b9101e1e5ec7e36d
-=======
-      spriteId: 9ef7a282818dbba4ba38b48e35ec2010
->>>>>>> 13ac50ed9cd40651cbf57c87424b51120f4253cb
+      spriteId: bcfb837cedb08e344a3ef5243bca5bab
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -215,6 +199,54 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

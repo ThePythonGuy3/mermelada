@@ -6,6 +6,8 @@ TagManager:
   tags:
   - HealthAdder
   - Wall
+  - Bullet
+  - BubbleTank
   layers:
   - Default
   - TransparentFX
