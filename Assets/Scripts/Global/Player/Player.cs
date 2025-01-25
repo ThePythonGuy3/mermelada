@@ -72,7 +72,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         timeHealthAdder.DestroyHealthAdder();
     }
 
-    public static void PlayerIsDead()
+    public void Die()
     {
         // DO SOMETHING TODO
         Debug.Log("Player is dead");
