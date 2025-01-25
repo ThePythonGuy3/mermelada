@@ -33,7 +33,7 @@ public class MapLoader : MonoBehaviour
 
     private const int top = 0b0001, right = 0b0010, bottom = 0b0100, left = 0b1000;
 
-    private List<Vector2Int> generatedRooms, generatedBridges;
+    private List<Vector2Int> generatedRooms, generatedBridges, miniBossRooms;
 
     private Vector3Int topV = new Vector3Int(0, 1, 0), bottomV = new Vector3Int(0, -1, 0), leftV = new Vector3Int(-1, 0, 0), rightV = new Vector3Int(1, 0, 0);
 
@@ -43,6 +43,7 @@ public class MapLoader : MonoBehaviour
     {
         generatedRooms = new List<Vector2Int>();
         generatedBridges = new List<Vector2Int>();
+        miniBossRooms = new List<Vector2Int>();
     }
 
     private Dictionary<int, List<string>> roomsByConnections = new Dictionary<int, List<string>>()
@@ -218,6 +219,18 @@ public class MapLoader : MonoBehaviour
         return output.ToArray();
     }
 
+    public Vector2Int[] GetRoomCenters()
+    {
+        List<Vector2Int> output = new List<Vector2Int>();
+
+        foreach (Vector2Int vec in miniBossRooms)
+        {
+            output.Add(new Vector2Int(vec.x + 50, vec.y - 50));
+        }
+
+        return output.ToArray();
+    }
+
     void Cleanup()
     {
         RectInt boundaries = GetBoundaries();
@@ -346,7 +359,7 @@ public class MapLoader : MonoBehaviour
             GenerateRooms(center, centerRoom, maxDepth);
 
             unitaryBoundaries = GetUnitaryBoundaries();
-        } while (unitaryBoundaries.height < 5 || generatedRooms.Count < 10);
+        } while (unitaryBoundaries.height < 6 || generatedRooms.Count < 10);
 
         int y1 = unitaryBoundaries.y + 2;
 
@@ -357,17 +370,25 @@ public class MapLoader : MonoBehaviour
         int x3 = unitaryBoundaries.x + unitaryBoundaries.width + 4;
         int x4 = unitaryBoundaries.x + unitaryBoundaries.width + 6;
 
-        LoadRoomFromString(new Vector3Int(x1 * roomSize.x, y1 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossRight1.text);
+        Vector3Int topLeft = new Vector3Int(x1 * roomSize.x, y1 * roomSize.y + 50 - roomSize.y / 2, 0);
+        LoadRoomFromString(topLeft, miniBossRight1.text);
         CreateBridge(new Vector3Int(x1 * roomSize.x + 100, y1 * roomSize.y - roomSize.y / 2 + 3, 0), true);
+        miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));
 
-        LoadRoomFromString(new Vector3Int(x2 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossRight2.text);
+        topLeft = new Vector3Int(x2 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0);
+        LoadRoomFromString(topLeft, miniBossRight2.text);
         CreateBridge(new Vector3Int(x2 * roomSize.x + 100, y2 * roomSize.y - roomSize.y / 2 + 3, 0), true);
+        miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));
 
-        LoadRoomFromString(new Vector3Int(x3 * roomSize.x, y1 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossLeft1.text);
+        topLeft = new Vector3Int(x3 * roomSize.x, y1 * roomSize.y + 50 - roomSize.y / 2, 0);
+        LoadRoomFromString(topLeft, miniBossLeft1.text);
         CreateBridge(new Vector3Int(x3 * roomSize.x - 1, y1 * roomSize.y - roomSize.y / 2 + 3, 0), false);
+        miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));
 
-        LoadRoomFromString(new Vector3Int(x4 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossLeft2.text);
+        topLeft = new Vector3Int(x4 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0);
+        LoadRoomFromString(topLeft, miniBossLeft2.text);
         CreateBridge(new Vector3Int(x4 * roomSize.x - 1, y2 * roomSize.y - roomSize.y / 2 + 3, 0), false);
+        miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));
 
         Cleanup();
     }

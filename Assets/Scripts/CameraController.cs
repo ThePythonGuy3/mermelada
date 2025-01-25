@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 
     private float transition = 0f;
 
-    private Vector2Int[] centers = null;
+    private Vector2Int[] centers = null, miniBossCenters = null;
 
     private int skipCounter = 200;
 
@@ -46,6 +46,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         if (centers == null) centers = mapLoader.GetCenters();
+        if (miniBossCenters == null) miniBossCenters = mapLoader.GetRoomCenters();
 
         skipCounter++;
         if (allowTransition && skipCounter > 20)
@@ -64,6 +65,18 @@ public class CameraController : MonoBehaviour
                 {
                     minDistance = dist;
                     closest = vc;
+                }
+            }
+
+            foreach (Vector2Int vec in miniBossCenters)
+            {
+                Vector3 vc = new Vector3(vec.x, vec.y, 0);
+                float dist = Vector3.Distance(vc, pos);
+
+                if (dist <= 50)
+                {
+                    closest = vc;
+                    break;
                 }
             }
 
