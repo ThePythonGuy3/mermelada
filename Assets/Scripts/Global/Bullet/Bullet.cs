@@ -1,59 +1,93 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class Bullet : MonoBehaviour
 {
-    private Rigidbody2D _rb;
-    
-    [SerializeField] private float _bulletSpeed = 2500f;
-    [SerializeField] private float _stopAfterMovingX = 3;
     // [SerializeField] private int _damage = 10;
 
-    [SerializeField] private float _timeToDestroy = 10f;
-    private float _timerToDestroy;
+    [SerializeField] private float _bulletMaxDistance = 5.0f;
+
+    [SerializeField] private AnimationCurve _animationCurve;
+    [SerializeField] private float _animationDuration;
+
+    // Time to wait after movement animation is completed
+    [SerializeField] private float _timeWaitEnd = 2f;
 
     public BulletPool BulletPool;
 
-    private void Awake()
+    #region BULLET MOVEMENT
+    public void StartBulletMovement()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        Restart();
+        Vector3 start = transform.position;
+        Quaternion rotation = transform.rotation;
+
+        Vector3 target = CalculateTargetPosition(start, rotation, _bulletMaxDistance);
+
+        StartCoroutine(BulletMovement(start, target));
     }
 
-    private void Update()
+    private Vector3 CalculateTargetPosition(Vector3 position, Quaternion rotation, float distance)
     {
-        _timerToDestroy -= Time.deltaTime;
+        Vector3 newPosition = Vector3.zero;
 
-        if (_timerToDestroy <= 0)
+        float deg = rotation.eulerAngles.z + 90;
+        float rad = deg * Mathf.Deg2Rad;
+
+        newPosition.x = position.x + _bulletMaxDistance * Mathf.Cos(rad);
+        newPosition.y = position.y + _bulletMaxDistance * Mathf.Sin(rad);
+
+        return newPosition;
+    }
+
+    IEnumerator BulletMovement(Vector3 start, Vector3 target)
+    {
+        yield return StartCoroutine(LerpPosition(start, target, _animationDuration));
+        yield return StartCoroutine(WaitInPosition(_timeWaitEnd));
+        DestroyBullet();
+
+        yield return null;
+    }
+
+    IEnumerator LerpPosition(Vector3 start, Vector3 target, float lerpDuration)
+    {
+        float timeElapsed = 0f;
+
+        while (timeElapsed < lerpDuration)
         {
-            DestroyBullet();
+            float animationEvaluated = _animationCurve.Evaluate(timeElapsed / lerpDuration);
+            transform.position = Vector3.Lerp(start, target, animationEvaluated);
+            timeElapsed += Time.deltaTime;
+
+            yield return null;
         }
 
-        _rb.linearVelocity = transform.up * (_bulletSpeed * Time.deltaTime);
+        transform.position = target;
     }
+
+    IEnumerator WaitInPosition(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+    }
+    #endregion
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        /* TODO
         if (other.CompareTag("Wall"))
         {
             DestroyBullet();
         }
-        else if (other.CompareTag("Enemy") || other.CompareTag("Player"))
+        // TODO
+        /*else if (other.CompareTag("Enemy") || other.CompareTag("Player"))
         {
             DestroyBullet();
-            other.GetComponent<Character>().LoseHealth(_damage);
-        }
-        */
-    }
-
-    public void Restart()
-    {
-        _timerToDestroy = _timeToDestroy;
+            // other.GetComponent<Character>().LoseHealth(_damage);
+        }*/
     }
 
     public void DestroyBullet()

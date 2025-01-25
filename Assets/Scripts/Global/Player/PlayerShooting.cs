@@ -45,12 +45,12 @@ public class PlayerShooting : MonoBehaviour
         {
             _activeBullet = _bulletPool.GetBullet();
 
-            _activeBullet.GetComponent<Bullet>().Restart();
-
             _activeBullet.transform.position = _gun.position;
             _activeBullet.transform.rotation = _gun.rotation;
 
             _activeBullet.SetActive(true);
+
+            _activeBullet.GetComponent<Bullet>().StartBulletMovement();
 
             _betweenBulletsTimer = _timeBetweenBullets;
         }
