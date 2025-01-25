@@ -229,7 +229,7 @@ public class MapLoader : MonoBehaviour
 
         foreach (Vector2Int vec in miniBossRooms)
         {
-            output.Add(new Vector2Int(vec.x, vec.y));
+            output.Add(new Vector2Int(vec.x + 35, vec.y - 40));
         }
 
         return output.ToArray();
@@ -309,7 +309,6 @@ public class MapLoader : MonoBehaviour
     {
         bool reachedEnd = false;
         int length = 0;
-        int tiles = 0;
         while (!reachedEnd && length <= 500)
         {
             if (tilemap.GetTile(from) != null && tilemap.GetTile(from + bottomV * 5) != null)
@@ -363,7 +362,7 @@ public class MapLoader : MonoBehaviour
             GenerateRooms(center, centerRoom, maxDepth);
 
             unitaryBoundaries = GetUnitaryBoundaries();
-        } while (unitaryBoundaries.height < 6 || generatedRooms.Count < 10);
+        } while (unitaryBoundaries.height < 9 || generatedRooms.Count < 10);
 
         int y1 = unitaryBoundaries.y + 2;
 
