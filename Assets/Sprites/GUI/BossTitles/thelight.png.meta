@@ -136,6 +136,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -372,7 +385,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thelight_0: -9189486064943198341
+      thelight_1: 5806016071108825613
+      thelight_2: -956710970486971680
+      thelight_3: 9193904877461938629
+      thelight_4: -6314008641307659149
+      thelight_5: -1667088384107927894
+      thelight_6: -85171667056416136
+      thelight_7: -4166086100833578192
+      thelight_8: -2742077662015677666
+      thelight_9: 8528758367536981206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

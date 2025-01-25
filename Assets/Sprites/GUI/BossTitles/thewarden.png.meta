@@ -139,6 +139,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -397,7 +410,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thewarden_0: -1851388106161598085
+      thewarden_1: 391338990717793344
+      thewarden_10: -1604427651989771998
+      thewarden_2: 6133001323137814174
+      thewarden_3: 8174103403542900914
+      thewarden_4: 2677026871296655187
+      thewarden_5: 4085899584908112930
+      thewarden_6: 2038473829823177007
+      thewarden_7: 6595738452893238635
+      thewarden_8: -6195359540285040991
+      thewarden_9: -3081583520186719192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
