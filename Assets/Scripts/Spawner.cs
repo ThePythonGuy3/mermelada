@@ -10,9 +10,6 @@ public class Spawner : MonoBehaviour
     public GameObject[] commonEnemyPrefabs;
 
     [SerializeField]
-    public float[] rarities;
-
-    [SerializeField]
     public GameObject player;
 
     [SerializeField]
@@ -21,21 +18,16 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     public TileBase floorTile, defaultFloorTile;
 
+    [SerializeField]
+    public GameObject[] minibosses;
+
+    private int miniboss = 0;
+
     private List<Vector2Int> alreadySpawned = new List<Vector2Int>();
 
     GameObject GenerateEnemy()
     {
-        double range = random.NextDouble();
-
-        for (int i = 0; i < commonEnemyPrefabs.Length; i++)
-        {
-            if (range >= rarities[i])
-            {
-                return commonEnemyPrefabs[i];
-            }
-        }
-
-        return commonEnemyPrefabs[0];
+        return commonEnemyPrefabs[random.Next(commonEnemyPrefabs.Length)];
     }
 
     public void Spawn(Vector2Int center, int amount)
@@ -59,13 +51,38 @@ public class Spawner : MonoBehaviour
                 if (mover != null) mover.player = player;
 
                 EnemyController controller = enemy.GetComponent<EnemyController>();
-                if (controller != null) controller.spawnRoomCenter = new Vector3(position.x, position.y, 0);
+                if (controller != null)
+                {
+                    controller.spawnRoomCenter = new Vector3(position.x, position.y, 0);
+                    controller.player = player;
+                }
 
                 summoned++;
             }
 
             attempts++;
         }
+    }
+
+    public void SpawnBoss(Vector2Int center)
+    {
+        if (alreadySpawned.Contains(center)) return;
+
+        alreadySpawned.Add(center);
+
+        GameObject boss = Instantiate(minibosses[miniboss], new Vector3(center.x, center.y, -1.5f), transform.rotation);
+
+        EnemyMover mover = boss.GetComponent<EnemyMover>();
+        if (mover != null) mover.player = player;
+
+        EnemyController controller = boss.GetComponent<EnemyController>();
+        if (controller != null)
+        {
+            controller.spawnRoomCenter = new Vector3(center.x, center.y, 0);
+            controller.player = player;
+        }
+
+        miniboss++;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

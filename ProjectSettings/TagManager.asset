@@ -7,10 +7,8 @@ TagManager:
   - HealthAdder
   - Wall
   - Bullet
-<<<<<<< HEAD
   - BubbleTank
-=======
->>>>>>> d9a1e3649f4a0c6afdc27686a7ea7acb7c7193de
+  - Enemy
   layers:
   - Default
   - TransparentFX
