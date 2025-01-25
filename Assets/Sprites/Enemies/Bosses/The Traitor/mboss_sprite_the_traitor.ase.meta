@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f2890acfb1650f419e91beb1c381851
+guid: 20fee94769d3e5a42839aec278ca1455
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: mboss_attack_light_mortar_spot
+  - name: mboss_sprite_the_traitor
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 24
-      height: 12
-    spriteID: 047f932fe65be794b8c9573d80b11da0
+      width: 50
+      height: 50
+    spriteID: 7863c91e6a1937e419cfeaed2695727c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1026512737
-    name: mboss_attack_light_mortar_spot
+    guid: -1267566362
+    name: mboss_sprite_the_traitor
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: mboss_attack_light_mortar_spot
+    - name: mboss_sprite_the_traitor
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 24
-        height: 12
-      spriteId: 047f932fe65be794b8c9573d80b11da0
+        width: 50
+        height: 50
+      spriteId: 7863c91e6a1937e419cfeaed2695727c
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 24, y: 12}
-  previousTextureSize: {x: 32, y: 32}
+  canvasSize: {x: 50, y: 50}
+  previousTextureSize: {x: 64, y: 64}
