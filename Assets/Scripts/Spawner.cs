@@ -21,6 +21,9 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     public GameObject[] minibosses;
 
+    [SerializeField]
+    public Announcer announcer;
+
     private int miniboss = 0;
 
     private List<Vector2Int> alreadySpawned = new List<Vector2Int>();
@@ -30,9 +33,9 @@ public class Spawner : MonoBehaviour
         return commonEnemyPrefabs[random.Next(commonEnemyPrefabs.Length)];
     }
 
-    public void Spawn(Vector2Int center, int amount)
+    public int Spawn(Vector2Int center, int amount)
     {
-        if (alreadySpawned.Contains(center)) return;
+        if (alreadySpawned.Contains(center)) return -1;
 
         alreadySpawned.Add(center);
 
@@ -62,11 +65,13 @@ public class Spawner : MonoBehaviour
 
             attempts++;
         }
+
+        return summoned;
     }
 
-    public void SpawnBoss(Vector2Int center)
+    public bool SpawnBoss(Vector2Int center)
     {
-        if (alreadySpawned.Contains(center)) return;
+        if (alreadySpawned.Contains(center)) return false;
 
         alreadySpawned.Add(center);
 
@@ -82,7 +87,11 @@ public class Spawner : MonoBehaviour
             controller.player = player;
         }
 
+        announcer.Announce(miniboss);
+
         miniboss++;
+
+        return true;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

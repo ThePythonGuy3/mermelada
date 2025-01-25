@@ -22,7 +22,7 @@ public class EnemigoChulisController : EnemyController
         attackList[0].timerSeconds = 5;
         attackList[0].Run = () =>
         {
-            Debug.Log("HELLO!!!!!!!!!!!!");
+            //Debug.Log("HELLO!!!!!!!!!!!!");
         };
 
         attackList[1] = new Attack();
@@ -30,7 +30,7 @@ public class EnemigoChulisController : EnemyController
         attackList[1].timerSeconds = 6;
         attackList[1].Run = () =>
         {
-            Debug.Log("HELLO2!!!!!!!!!!!!");
+            //Debug.Log("HELLO2!!!!!!!!!!!!");
         };
     }
 

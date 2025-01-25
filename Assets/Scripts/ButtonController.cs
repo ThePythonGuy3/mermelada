@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ButtonController : MonoBehaviour
         // Aquí puedes implementar la funcionalidad para iniciar el juego
         Debug.Log("Play button pressed.");
         AudioManager.instance.PlayClick();
+        SceneManager.LoadScene("Lore1");
     }
 
     // Método para el botón de Options
