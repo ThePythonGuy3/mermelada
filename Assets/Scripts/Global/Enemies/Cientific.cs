@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class CientificoPatata : EnemyController
+public class Cientific : EnemyController
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         attackList = new Attack[1];
@@ -12,13 +11,7 @@ public class CientificoPatata : EnemyController
         attackList[0].timerSeconds = 10;
         attackList[0].Run = () =>
         {
-            
+            Debug.Log("Some action done by the enemy...");
         };
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

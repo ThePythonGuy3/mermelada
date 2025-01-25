@@ -26,6 +26,15 @@ public class Helpers
         return newPosition;
     }
 
+    /// <summary>
+    /// Smoothly moves a Transform from a start position to a target position over a given duration using an animation curve.
+    /// </summary>
+    /// 
+    /// <param name="transform">The Transform to move.</param>
+    /// <param name="start">The starting position.</param>
+    /// <param name="target">The target position.</param>
+    /// <param name="lerpDuration">The total duration of the movement in seconds.</param>
+    /// <param name="curve">The AnimationCurve to control the interpolation.</param>
     public static IEnumerator LerpComplexPosition(Transform transform, Vector3 start, Vector3 target, float lerpDuration, AnimationCurve curve)
     {
         float timeElapsed = 0f;

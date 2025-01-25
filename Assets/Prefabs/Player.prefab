@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8223597410694274883}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.8415094, g: 0.8415094, b: 0.8415094, a: 0.5803922}
+  m_Sprite: {fileID: -6142374563283994760, guid: d921f25a7b8b1f24dafc8b092f81c697, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 226819976894155738}
   - component: {fileID: 5368375858067910271}
   - component: {fileID: 7368676185728788470}
+  - component: {fileID: 2010669450485502755}
   - component: {fileID: 5007793503074414854}
   - component: {fileID: 5750820049302757381}
   m_Layer: 0
@@ -259,8 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474f73232c475d647afbcba473cfc4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeDamagePerShoot: 10
-  _speed: 50
+  _timeDamagePerShoot: 5
+  _speed: 64
 --- !u!114 &226819976894155738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gun: {fileID: 6449523281187032887}
-  _timeBetweenBullets: 1
+  _timeBetweenBullets: 1.5
 --- !u!114 &5368375858067910271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,13 +298,54 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6017726434382267038}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 822a71eb5c6482d459d4f805c45c78b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTimeHealth: 20
+  _maxTimeHealth: 120
   _slider: {fileID: 0}
+  _currentTimeHealthText: {fileID: 0}
+  _timeHealthBarReactionstText: {fileID: 0}
+--- !u!114 &2010669450485502755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017726434382267038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1a6a3a10c5f8f4fbaf20ebd591e284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dashDistance: 8
+  _dashDuration: 0.3
+  _dashCouldwon: 6
+  _dashProgressCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &5007793503074414854
 MonoBehaviour:
   m_ObjectHideFlags: 0
