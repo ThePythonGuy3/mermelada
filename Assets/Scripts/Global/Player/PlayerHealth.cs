@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            Player.PlayerIsDead();
+            // Player.PlayerIsDead();
             _currentTimeHealth = 0;
         }
 
