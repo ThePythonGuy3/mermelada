@@ -21,6 +21,6 @@ public class EnemyMover : MonoBehaviour
         normalArrow.Normalize();
         normalArrow *= minPlayerDistance;
 
-        agentOverride2d.Agent.destination = player.transform.position + normalArrow;
+        if (agentOverride2d.Agent.isOnNavMesh) agentOverride2d.Agent.destination = player.transform.position + normalArrow;
     }
 }
