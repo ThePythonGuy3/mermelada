@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 206b43e0bc78497489473533959562a6
+guid: 50706d7cb797cbc4f9378775aaab0720
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bubble particle_2
+  - name: mboss_sprite_the_mixer
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.101123594}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 4
-      height: 4
-    spriteID: 8c2e68199229bc84595ec957bde0cc55
+      width: 92
+      height: 89
+    spriteID: d0ed7c2cd61da754282ef822afcafc47
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1116033139
-    name: bubble particle_2
+    guid: 51154314
+    name: mboss_sprite_the_mixer
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble particle_2
+    - name: mboss_sprite_the_mixer
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 4
-        height: 4
-      spriteId: 8c2e68199229bc84595ec957bde0cc55
+        x: 4
+        y: 9
+        width: 92
+        height: 89
+      spriteId: d0ed7c2cd61da754282ef822afcafc47
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 4, y: 4}
-  previousTextureSize: {x: 16, y: 16}
+  canvasSize: {x: 100, y: 100}
+  previousTextureSize: {x: 128, y: 128}
