@@ -5,6 +5,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 {
     #region SHOOTER VARIABLES
     private PlayerShooting _playerShooting;
+    [SerializeField] private float _timeDamagePerShoot;
     #endregion
 
     #region HEALTH VARIABLES
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     {
         if (other.tag == "HealthAdder")
         {
-            AddTimeHealth(other);
+            AddTimeHealth(other); // TODO
         }
     }
 
@@ -60,12 +61,23 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
         timeHealthAdder.DestroyHealthAdder();
     }
+
+    public static void PlayerIsDead()
+    {
+        // DO SOMETHING
+        Debug.Log("Player is dead");
+    }
     #endregion
 
     #region PLAYER INPUT
     public void OnAttack(InputAction.CallbackContext ctx)
     {
-        _playerShooting.Shoot();
+        bool hasShooted = _playerShooting.Shoot();
+
+        if (hasShooted)
+        {
+            _playerHealth.GetTimeDamage(_timeDamagePerShoot);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext ctx)

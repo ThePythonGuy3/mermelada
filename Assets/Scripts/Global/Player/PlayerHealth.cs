@@ -38,13 +38,18 @@ public class PlayerHealth : MonoBehaviour
     {
         float newTimeHealth = _currentTimeHealth + timeHealthToAdd;
 
-        if (newTimeHealth < _maxTimeHealth)
+        if (newTimeHealth < _maxTimeHealth && newTimeHealth > 0)
         {
             _currentTimeHealth = newTimeHealth;
         }
-        else
+        else if (newTimeHealth >= _maxTimeHealth)
         {
             _currentTimeHealth = _maxTimeHealth;
+        }
+        else
+        {
+            Player.PlayerIsDead();
+            _currentTimeHealth = 0;
         }
 
         SetTimeHealth(_currentTimeHealth);
@@ -53,6 +58,11 @@ public class PlayerHealth : MonoBehaviour
     private void SetTimeHealth(float health)
     {
         _slider.value = health;
+    }
+
+    public void GetTimeDamage(float timeDamage)
+    {
+        AddToTimeHealth(- timeDamage);
     }
 
     public void GetDamage()
