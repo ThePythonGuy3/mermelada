@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a593cb776c59a844d9a3c7c6137aa201
+guid: 6dd5b7eb15eff8d49badab66b46b024b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4963871089023203753
-    second: cooldown_shoot_0
+      213: 5398283193359031274
+    second: quit_0
+  - first:
+      213: 1336899241092420851
+    second: quit_1
+  - first:
+      213: -5410376967538941842
+    second: quit_2
+  - first:
+      213: 3081857404903652501
+    second: quit_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,15 +105,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dfc18f7cca20de72cc9ab874f11ff37e08a3c7b4
-=======
->>>>>>> 8cb7c0f909f7b205a125278cee5b36cc300d42ae
->>>>>>> b027ba1f0edb900d19464e98fa4221950f21ab18
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -118,38 +118,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> 7d25affa0308213b168e948990a45aba052f41d5
-<<<<<<< HEAD
->>>>>>> dfc18f7cca20de72cc9ab874f11ff37e08a3c7b4
-=======
->>>>>>> 8cb7c0f909f7b205a125278cee5b36cc300d42ae
->>>>>>> b027ba1f0edb900d19464e98fa4221950f21ab18
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cooldown_shoot_0
+      name: quit_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 8
-        height: 24
+        x: 60
+        y: 246
+        width: 265
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a93f0ca47633e440800000000000000
-      internalID: 4963871089023203753
+      spriteID: aeb502986fd8aea40800000000000000
+      internalID: 5398283193359031274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 246
+        width: 265
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f49dcdc6ce9d8210800000000000000
+      internalID: 1336899241092420851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit_2
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 246
+        width: 265
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60e2ec30da7ae4b0800000000000000
+      internalID: -5410376967538941842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit_3
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 246
+        width: 265
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c70bb3bf4f4ca20800000000000000
+      internalID: 3081857404903652501
       vertices: []
       indices: 
       edges: []
@@ -168,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -177,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      quit_0: 5398283193359031274
+      quit_1: 1336899241092420851
+      quit_2: -5410376967538941842
+      quit_3: 3081857404903652501
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

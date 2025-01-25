@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a593cb776c59a844d9a3c7c6137aa201
+guid: 6c759da05ecb8e04fae1b011bc7f773a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4963871089023203753
-    second: cooldown_shoot_0
+      213: 2136009232375730708
+    second: quit2_0
+  - first:
+      213: 9132645795536578698
+    second: quit2_1
+  - first:
+      213: -1116017068658711830
+    second: quit2_2
+  - first:
+      213: 193997289908700350
+    second: quit2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,15 +105,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dfc18f7cca20de72cc9ab874f11ff37e08a3c7b4
-=======
->>>>>>> 8cb7c0f909f7b205a125278cee5b36cc300d42ae
->>>>>>> b027ba1f0edb900d19464e98fa4221950f21ab18
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -118,38 +118,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-=======
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> 7d25affa0308213b168e948990a45aba052f41d5
-<<<<<<< HEAD
->>>>>>> dfc18f7cca20de72cc9ab874f11ff37e08a3c7b4
-=======
->>>>>>> 8cb7c0f909f7b205a125278cee5b36cc300d42ae
->>>>>>> b027ba1f0edb900d19464e98fa4221950f21ab18
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cooldown_shoot_0
+      name: quit2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 8
-        height: 24
+        x: 53
+        y: 239
+        width: 279
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9a93f0ca47633e440800000000000000
-      internalID: 4963871089023203753
+      spriteID: 412d5bc6411a4ad10800000000000000
+      internalID: 2136009232375730708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit2_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 239
+        width: 279
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a882c66d6fcadbe70800000000000000
+      internalID: 9132645795536578698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit2_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 239
+        width: 279
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae22353936c1380f0800000000000000
+      internalID: -1116017068658711830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quit2_3
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 239
+        width: 279
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb48560e18731b200800000000000000
+      internalID: 193997289908700350
       vertices: []
       indices: 
       edges: []
@@ -168,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -177,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      quit2_0: 2136009232375730708
+      quit2_1: 9132645795536578698
+      quit2_2: -1116017068658711830
+      quit2_3: 193997289908700350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

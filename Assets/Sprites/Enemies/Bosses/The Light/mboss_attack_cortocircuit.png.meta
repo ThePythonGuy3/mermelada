@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 90eb6ee24b7597446998ba55c7f56a24
+guid: 38e8e13a21488a2498865367753d1d68
 =======
 guid: 917973bb0ff949940b7a7303deb45b6f
 >>>>>>> 13ac50ed9cd40651cbf57c87424b51120f4253cb
+>>>>>>> f5cbb1fa2ca6661bac344446409a816f031a4e21
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -167,7 +167,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_attack_cortocircuit_0: -5311907407977526075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
