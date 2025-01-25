@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_attack_light_mortar_spot_0: -365142262442496861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

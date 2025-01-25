@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_sprite_the_warden_0: -5095289663625516561
+      mboss_sprite_the_warden_1: 2399062329858996385
+      mboss_sprite_the_warden_2: 6601067815778213450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

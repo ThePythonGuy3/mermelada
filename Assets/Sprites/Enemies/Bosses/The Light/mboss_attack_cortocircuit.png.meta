@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_attack_cortocircuit_0: -5311907407977526075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

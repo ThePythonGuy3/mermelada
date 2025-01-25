@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_sprite_the_mixer_0: -671486166031314455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
