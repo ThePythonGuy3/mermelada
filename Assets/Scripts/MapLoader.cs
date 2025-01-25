@@ -8,6 +8,7 @@ public class MapLoader : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
 
     [SerializeField] private RuleTile wallTile;
+    [SerializeField] private RuleTile randomizedWallTile;
     [SerializeField] private RuleTile wallTile2D;
     [SerializeField] private RuleTile floorTile;
     [SerializeField] private RuleTile defaultFloorTile;
@@ -18,7 +19,10 @@ public class MapLoader : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] private float rareFloorChance = 0.05f;
 
-    
+    [Range(0, 1)]
+    [SerializeField] private float rareWallChance = 0.05f;
+
+
     private System.Random random = new System.Random();
 
     private TextAsset[] roomAssets;
@@ -81,8 +85,7 @@ public class MapLoader : MonoBehaviour
                 }
                 else if (tile.Contains("F") && tilemap.GetTile(coords + topLeft) == null)
                 {
-                    RuleTile fTile = random.NextDouble() > rareFloorChance ? defaultFloorTile : floorTile;
-                    tilemap.SetTile(coords + topLeft, fTile);
+                    tilemap.SetTile(coords + topLeft, GetFloor());
                 }
 
                 coords.x += 1;
@@ -95,6 +98,18 @@ public class MapLoader : MonoBehaviour
             coords2D.x = 0;
             coords2D.y -= 1;
         }
+    }
+
+    RuleTile GetWall()
+    {
+        if (random.NextDouble() > rareWallChance) return wallTile;
+        return randomizedWallTile;
+    }
+
+    RuleTile GetFloor()
+    {
+        if (random.NextDouble() > rareFloorChance) return defaultFloorTile;
+        return floorTile;
     }
 
     string GetRandomRoom(int pool)
@@ -133,11 +148,11 @@ public class MapLoader : MonoBehaviour
             if (vec.y > maxY) maxY = vec.y;
         }
 
-        x--;
-        y--;
+        x -= 1;
+        y -= 2;
         maxX++;
         maxY++;
-        return new RectInt(x * roomSize.x, y * roomSize.y, (maxX - x + 1) * roomSize.x, (maxY - y + 1) * roomSize.y);
+        return new RectInt(x * roomSize.x, y * roomSize.y, (maxX - x + 1) * roomSize.x, (maxY - y) * roomSize.y);
     }
 
     public Vector2Int[] GetCenters()
@@ -150,6 +165,76 @@ public class MapLoader : MonoBehaviour
         }
 
         return output.ToArray();
+    }
+
+    void Cleanup()
+    {
+        RectInt boundaries = GetBoundaries();
+
+        // Fill map with walls
+        for (int x = 0; x < boundaries.width; x++)
+        {
+            for (int y = 0; y < boundaries.height; y++)
+            {
+                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
+                if (tilemap.GetTile(pos) == null)
+                {
+                    tilemap.SetTile(pos, wallTile);
+                }
+            }
+        }
+
+        // Get rid of one tile high gaps
+        for (int x = 0; x < boundaries.width; x++)
+        {
+            for (int y = 0; y < boundaries.height; y++)
+            {
+                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
+                if (tilemap.GetTile(pos) != wallTile && tilemap.GetTile(pos + topV) == wallTile && tilemap.GetTile(pos + bottomV) == wallTile)
+                {
+                    tilemap.SetTile(pos, wallTile);
+                }
+            }
+        }
+
+        // Add missing 2.5d walls
+        for (int x = 0; x < boundaries.width; x++)
+        {
+            for (int y = 0; y < boundaries.height; y++)
+            {
+                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
+                if (tilemap.GetTile(pos) != wallTile && tilemap.GetTile(pos + topV) == wallTile)
+                {
+                    tilemap.SetTile(pos, wallTile2D);
+                }
+            }
+        }
+
+        // Get rid of hanging 2.5d walls
+        for (int x = 0; x < boundaries.width; x++)
+        {
+            for (int y = 0; y < boundaries.height; y++)
+            {
+                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
+                if (tilemap.GetTile(pos) == wallTile2D && tilemap.GetTile(pos + bottomV) == null)
+                {
+                    tilemap.SetTile(pos, null);
+                }
+            }
+        }
+
+        // Randomize walls
+        for (int x = 0; x < boundaries.width; x++)
+        {
+            for (int y = 0; y < boundaries.height; y++)
+            {
+                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
+                if (tilemap.GetTile(pos) == wallTile)
+                {
+                    tilemap.SetTile(pos, GetWall());
+                }
+            }
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -175,60 +260,6 @@ public class MapLoader : MonoBehaviour
 
         GenerateRooms(center, centerRoom, maxDepth);
 
-        RectInt boundaries = GetBoundaries();
-
-        for (int x = 0; x < boundaries.width; x++)
-        {
-            for (int y = 0; y < boundaries.height; y++)
-            {
-                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
-                TileBase tileBase = tilemap.GetTile(pos);
-                if (tileBase == floorTile || tileBase == defaultFloorTile)
-                {
-                    for (int i = -1; i < 2; i++)
-                    {
-                        for (int j = -1; j < 2; j++)
-                        {
-                            if (tilemap.GetTile(pos + new Vector3Int(i, j)) == null)
-                            {
-                                tilemap.SetTile(pos, wallTile);
-                                goto breakHere;
-                            }
-                        }
-                    }
-                    breakHere: continue;
-                }
-            }
-        }
-
-        for (int x = 0; x < boundaries.width; x++)
-        {
-            for (int y = 0; y < boundaries.height; y++)
-            {
-                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
-                if (tilemap.GetTile(pos) != wallTile && tilemap.GetTile(pos + topV) == wallTile && tilemap.GetTile(pos + bottomV) == wallTile)
-                {
-                    tilemap.SetTile(pos, wallTile);
-                }
-            }
-        }
-
-        for (int x = 0; x < boundaries.width; x++)
-        {
-            for (int y = 0; y < boundaries.height; y++)
-            {
-                Vector3Int pos = new Vector3Int(x + boundaries.x, y + boundaries.y, 0);
-                if (tilemap.GetTile(pos) != wallTile && tilemap.GetTile(pos + topV) == wallTile)
-                {
-                    tilemap.SetTile(pos, wallTile2D);
-                }
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Cleanup();
     }
 }
