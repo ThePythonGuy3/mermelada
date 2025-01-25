@@ -61,7 +61,8 @@ public class Bullet : MonoBehaviour
         else if (other.CompareTag("Enemy"))
         {
             DestroyBullet();
-            // other.GetComponent<Character>().LoseHealth(_damage);
+            BulletAccepter a = other.GetComponent<BulletAccepter>();
+            if (a != null) a.OnHit();
         }
     }
 

@@ -23,9 +23,12 @@ public class Manager : MonoBehaviour
         if (!bossRoom)
         {
             int spawnAmount = 4;
-            spawner.Spawn(center, spawnAmount);
-            remainingEnemies = spawnAmount;
-            Lock();
+            int count = spawner.Spawn(center, spawnAmount);
+            if (count != -1)
+            {
+                remainingEnemies = count;
+                Lock();
+            }
         } else
         {
             spawner.SpawnBoss(center);
