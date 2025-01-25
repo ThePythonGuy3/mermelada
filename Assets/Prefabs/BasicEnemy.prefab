@@ -17,9 +17,11 @@ GameObject:
   - component: {fileID: 180825752641013949}
   - component: {fileID: 8583063316763037577}
   - component: {fileID: 1578571936711913889}
+  - component: {fileID: 6522798225707005045}
+  - component: {fileID: 909569590090609480}
   m_Layer: 0
   m_Name: BasicEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,11 +169,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6280431761253528231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab3e40a9954c184da336fa6a6144120, type: 3}
+  m_Script: {fileID: 11500000, guid: ae4dd69c07aa9c645ac17e66ca2b3a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  minPlayerDistance: 1.5
+  minPlayerDistance: 3
 --- !u!114 &4581355482372808116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRoomCenter: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!114 &1578571936711913889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,3 +235,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delaySeconds: 3
+--- !u!114 &6522798225707005045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280431761253528231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0766d49304c9548aa32388311cf527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &909569590090609480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6280431761253528231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7769a95655705fe4dadffe08cca796a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

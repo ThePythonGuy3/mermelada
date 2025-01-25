@@ -14,15 +14,27 @@ public class Manager : MonoBehaviour
 
     public void Unlock()
     {
+        remainingEnemies = 0;
         cameraController.allowTransition = true;
     }
 
-    public void LoadArea(Vector2Int center)
+    public void LoadArea(Vector2Int center, bool bossRoom)
     {
-        int spawnAmount = 4;
-        spawner.Spawn(center, spawnAmount);
-        remainingEnemies = spawnAmount;
-        Lock();
+        if (!bossRoom)
+        {
+            int spawnAmount = 4;
+            int count = spawner.Spawn(center, spawnAmount);
+            if (count != -1)
+            {
+                remainingEnemies = count;
+                Lock();
+            }
+        } else
+        {
+            spawner.SpawnBoss(center);
+            remainingEnemies = 89255205; // A number xd
+            Lock();
+        }
     }
 
     public void Kill()

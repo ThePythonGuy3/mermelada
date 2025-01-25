@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c689942d45203c94aa14863d42c4d6f1
+guid: 9fd0df79b824aa14ba4f1a766a003d25
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6449941782824035381
-    second: sxczxc_0
+      213: 5365583288081812182
+    second: mboss_attack_shield_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sxczxc_0
+      name: mboss_attack_shield_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 207
-        width: 1145
-        height: 357
+        x: 2
+        y: 0
+        width: 98
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5342d23d0ebc28950800000000000000
-      internalID: 6449941782824035381
+      spriteID: 6da83ea8291667a40800000000000000
+      internalID: 5365583288081812182
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      sxczxc_0: 6449941782824035381
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

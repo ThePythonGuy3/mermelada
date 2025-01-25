@@ -6,6 +6,8 @@ public class EnemyController : MonoBehaviour
 
     public Vector3 spawnRoomCenter;
 
+    public GameObject player;
+
     public void ReceiveAttack()
     {
 

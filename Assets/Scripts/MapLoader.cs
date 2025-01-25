@@ -30,7 +30,6 @@ public class MapLoader : MonoBehaviour
     [Header("Navigation")]
     [SerializeField] private NavMeshSurface surface;
 
-
     private System.Random random = new System.Random();
 
     private TextAsset[] roomAssets;
