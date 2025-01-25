@@ -72,7 +72,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         timeHealthAdder.DestroyHealthAdder();
     }
 
-    public static void PlayerIsDead()
+    public void Die()
     {
         // DO SOMETHING TODO
         Debug.Log("Player is dead");
@@ -93,11 +93,6 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     public void OnMove(InputAction.CallbackContext ctx)
     {
         _direction = ctx.ReadValue<Vector2>();
-    }
-
-    public void OnDash(InputAction.CallbackContext ctx)
-    {
-        Debug.Log("HI");
     }
     #endregion
 }
