@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 206b43e0bc78497489473533959562a6
+guid: f41f6d7968c73b44eb24fb8e0c75f038
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bubble particle_2
+  - name: cooldown_shoot
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 4
-      height: 4
-    spriteID: b72f6676f1315954b9e87ee7d8f6da73
+      width: 8
+      height: 24
+    spriteID: 540bd63e483646a49928e0d8f845cfdb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1116033139
-    name: bubble particle_2
+    guid: 66163181
+    name: cooldown_shoot
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble particle_2
+    - name: cooldown_shoot
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 4
-        height: 4
-      spriteId: b72f6676f1315954b9e87ee7d8f6da73
+        width: 8
+        height: 24
+      spriteId: 540bd63e483646a49928e0d8f845cfdb
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 4, y: 4}
-  previousTextureSize: {x: 16, y: 16}
+  canvasSize: {x: 8, y: 24}
+  previousTextureSize: {x: 16, y: 32}
