@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+guid: e822db8de51a1a342ba150cc2fe76f5c
+=======
+<<<<<<< HEAD
 guid: f2192d780ce37df4c8418f2a8cd9772b
 =======
 guid: bed97d35e0d82ba40b0d33c9cfcb5fdc
 >>>>>>> 13ac50ed9cd40651cbf57c87424b51120f4253cb
+>>>>>>> f5cbb1fa2ca6661bac344446409a816f031a4e21
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -167,7 +171,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_attack_light_mortar_spot_0: -365142262442496861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

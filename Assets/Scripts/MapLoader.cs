@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
 using System;
+using NavMeshPlus.Components;
 
 public class MapLoader : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class MapLoader : MonoBehaviour
 
     [Range(0, 1)]
     [SerializeField] private float rareWallChance = 0.05f;
+
+    [Header("Navigation")]
+    [SerializeField] private NavMeshSurface surface;
 
 
     private System.Random random = new System.Random();
@@ -225,7 +229,7 @@ public class MapLoader : MonoBehaviour
 
         foreach (Vector2Int vec in miniBossRooms)
         {
-            output.Add(new Vector2Int(vec.x + 50, vec.y - 50));
+            output.Add(new Vector2Int(vec.x + 35, vec.y - 40));
         }
 
         return output.ToArray();
@@ -305,7 +309,6 @@ public class MapLoader : MonoBehaviour
     {
         bool reachedEnd = false;
         int length = 0;
-        int tiles = 0;
         while (!reachedEnd && length <= 500)
         {
             if (tilemap.GetTile(from) != null && tilemap.GetTile(from + bottomV * 5) != null)
@@ -359,7 +362,7 @@ public class MapLoader : MonoBehaviour
             GenerateRooms(center, centerRoom, maxDepth);
 
             unitaryBoundaries = GetUnitaryBoundaries();
-        } while (unitaryBoundaries.height < 6 || generatedRooms.Count < 10);
+        } while (unitaryBoundaries.height < 9 || generatedRooms.Count < 10);
 
         int y1 = unitaryBoundaries.y + 2;
 
@@ -391,5 +394,7 @@ public class MapLoader : MonoBehaviour
         miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));
 
         Cleanup();
+
+        surface.BuildNavMeshAsync();
     }
 }
