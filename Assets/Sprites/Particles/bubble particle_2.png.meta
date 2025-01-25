@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d921f25a7b8b1f24dafc8b092f81c697
+guid: 9c5ca8c9cbccf324fbec035a6b04aa50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6142374563283994760
-    second: crosshair_0
+      213: -4519117650993662
+    second: bubble particle_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crosshair_0
+      name: bubble particle_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 9
-        height: 9
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 877ff0ed0e6e1caa0800000000000000
-      internalID: -6142374563283994760
+      spriteID: 20ed6bde2e1ffeff0800000000000000
+      internalID: -4519117650993662
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      crosshair_0: -6142374563283994760
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
