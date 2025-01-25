@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerLook : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerLook : MonoBehaviour
 
     [SerializeField] private float pointerTransformMultiplier = 2.0f;
     private Vector2 newDirection;
+
+    private float angle;
 
     private void Awake()
     {
@@ -58,8 +61,18 @@ public class PlayerLook : MonoBehaviour
 
     private void RotateGun(Vector2 direction)
     {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        gunTransform.rotation = Quaternion.Euler(0, 0, angle - 90);
+        angle = CalculateMouseAngle(direction);
+        gunTransform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    public float CalculateMouseAngle(Vector2 direction)
+    {
+        return Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+    }
+
+    public float GetMouseAngle()
+    {
+        return angle;
     }
 
     #region HELPER
