@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f2890acfb1650f419e91beb1c381851
+guid: 846a4136425f5484e806df618d41bd9b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: mboss_attack_light_mortar_spot
+  - name: boss_obo
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.38461536, y: -0.031914894}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 24
-      height: 12
-    spriteID: 047f932fe65be794b8c9573d80b11da0
+      width: 52
+      height: 94
+    spriteID: 96f92934265fc284484983b355d3dfdd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1026512737
-    name: mboss_attack_light_mortar_spot
+    guid: 1075094438
+    name: boss_obo
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: mboss_attack_light_mortar_spot
+    - name: boss_obo
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 24
-        height: 12
-      spriteId: 047f932fe65be794b8c9573d80b11da0
+        x: 30
+        y: 3
+        width: 52
+        height: 94
+      spriteId: 96f92934265fc284484983b355d3dfdd
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 24, y: 12}
-  previousTextureSize: {x: 32, y: 32}
+  canvasSize: {x: 100, y: 100}
+  previousTextureSize: {x: 64, y: 128}
