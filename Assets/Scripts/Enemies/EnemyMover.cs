@@ -5,7 +5,7 @@ public class EnemyMover : MonoBehaviour
 {
     private AgentOverride2d agentOverride2d;
 
-    [SerializeField] private GameObject player;
+    [SerializeField] public GameObject player;
     [SerializeField] private float minPlayerDistance = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
