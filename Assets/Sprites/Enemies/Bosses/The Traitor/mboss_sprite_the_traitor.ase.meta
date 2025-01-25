@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3b0f86f0b67ba3949947639caadd55d2
+guid: adafa599644b10b4abf6bf80a08c728d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: mboss_attack_cortocircuit
+  - name: mboss_sprite_the_traitor
     originalName: 
-    pivot: {x: 0.5, y: -0.3}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 10
-    spriteID: 05d8294e466863b41aa676ad177d54b7
+      width: 50
+      height: 50
+    spriteID: f3c563bcb40a90242adefe8c9d98525c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1923204894
-    name: mboss_attack_cortocircuit
+    guid: -1267566362
+    name: mboss_sprite_the_traitor
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: mboss_attack_cortocircuit
+    - name: mboss_sprite_the_traitor
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 3
-        width: 32
-        height: 10
-      spriteId: 05d8294e466863b41aa676ad177d54b7
+        y: 0
+        width: 50
+        height: 50
+      spriteId: f3c563bcb40a90242adefe8c9d98525c
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 16}
-  previousTextureSize: {x: 64, y: 32}
+  canvasSize: {x: 50, y: 50}
+  previousTextureSize: {x: 64, y: 64}

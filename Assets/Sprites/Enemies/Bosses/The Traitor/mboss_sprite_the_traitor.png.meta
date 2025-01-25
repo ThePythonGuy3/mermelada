@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d17bb3b2879d1024b91b2aafeb4e5bdf
+guid: 2aa496bfa04db4744b53fb41939e5166
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -674715081486871506
-    second: tank_broken_0
+      213: 7080078115053767096
+    second: mboss_sprite_the_traitor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tank_broken_0
+      name: mboss_sprite_the_traitor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 17
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e24506b453ee2a6f0800000000000000
-      internalID: -674715081486871506
+      spriteID: 8b90cc5a88d714260800000000000000
+      internalID: 7080078115053767096
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      tank_broken_0: -674715081486871506
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
