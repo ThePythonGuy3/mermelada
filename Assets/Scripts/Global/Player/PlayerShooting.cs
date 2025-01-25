@@ -39,21 +39,27 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    public bool Shoot()
     {
         if (CanShoot())
         {
-            _activeBullet = _bulletPool.GetBullet();
-
-            _activeBullet.GetComponent<Bullet>().Restart();
-
-            _activeBullet.transform.position = _gun.position;
-            _activeBullet.transform.rotation = _gun.rotation;
-
-            _activeBullet.SetActive(true);
-
+            ManageBullet();
             _betweenBulletsTimer = _timeBetweenBullets;
+            return true;
         }
+
+        return false;
+    }
+
+    private void ManageBullet()
+    {
+        _activeBullet = _bulletPool.GetBullet();
+
+        _activeBullet.transform.position = _gun.position;
+        _activeBullet.transform.rotation = _gun.rotation;
+        _activeBullet.SetActive(true);
+
+        _activeBullet.GetComponent<Bullet>().StartBulletMovement();
     }
 
     #region HELPERS

@@ -13,6 +13,10 @@ public class MapLoader : MonoBehaviour
     [SerializeField] private RuleTile floorTile;
     [SerializeField] private RuleTile defaultFloorTile;
 
+    [Header("Special Rooms")]
+    [SerializeField] private TextAsset bossRoom;
+    [SerializeField] private TextAsset miniBossLeft1, miniBossLeft2, miniBossRight1, miniBossRight2;
+
     [Header("Config")]
     [SerializeField] private int maxDepth = 7;
 
@@ -155,6 +159,43 @@ public class MapLoader : MonoBehaviour
         return new RectInt(x * roomSize.x, y * roomSize.y, (maxX - x + 1) * roomSize.x, (maxY - y) * roomSize.y);
     }
 
+    RectInt GetUnitaryBoundaries()
+    {
+        int x = 0, y = 0;
+        int maxX = 0, maxY = 0;
+
+        foreach (Vector2Int vec in generatedRooms)
+        {
+            if (vec.x < x) x = vec.x;
+            if (vec.y < y) y = vec.y;
+            if (vec.x > maxX) maxX = vec.x;
+            if (vec.y > maxY) maxY = vec.y;
+        }
+
+        x -= 1;
+        y -= 2;
+        maxX++;
+        maxY++;
+        return new RectInt(x, y, maxX - x + 1, maxY - y);
+    }
+
+    Vector2Int GetHighest()
+    {
+        Vector2Int highest = generatedRooms[0];
+        int highestY = highest.y;
+
+        foreach (Vector2Int vec in generatedRooms)
+        {
+            if (vec.y > highestY)
+            {
+                highest = vec;
+                highestY = highest.y;
+            }
+        }
+
+        return highest;
+    }
+
     public Vector2Int[] GetCenters()
     {
         List<Vector2Int> output = new List<Vector2Int>();
@@ -237,6 +278,27 @@ public class MapLoader : MonoBehaviour
         }
     }
 
+    void CreateBridge(Vector3Int from, bool right)
+    {
+        bool reachedEnd = false;
+        int length = 0;
+        while (!reachedEnd && length <= 500)
+        {
+            if (tilemap.GetTile(from) != null && tilemap.GetTile(from + bottomV * 5) != null)
+                reachedEnd = true;
+
+            tilemap.SetTile(from, wallTile);
+            tilemap.SetTile(from + bottomV, wallTile2D);
+            tilemap.SetTile(from + bottomV * 2, GetFloor());
+            tilemap.SetTile(from + bottomV * 3, GetFloor());
+            tilemap.SetTile(from + bottomV * 4, GetFloor());
+            tilemap.SetTile(from + bottomV * 5, wallTile);
+
+            from.x += (right ? 1 : -1);
+            length++;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -259,6 +321,29 @@ public class MapLoader : MonoBehaviour
         string centerRoom = GetRandomRoom(top);
 
         GenerateRooms(center, centerRoom, maxDepth);
+
+        RectInt unitaryBoundaries = GetUnitaryBoundaries();
+
+        int y1 = unitaryBoundaries.y + 2;
+
+        int y2 = unitaryBoundaries.y + unitaryBoundaries.height - 2;
+
+        int x1 = unitaryBoundaries.x - 4;
+        int x2 = unitaryBoundaries.x - 6;
+        int x3 = unitaryBoundaries.x + unitaryBoundaries.width + 4;
+        int x4 = unitaryBoundaries.x + unitaryBoundaries.width + 6;
+
+        LoadRoomFromString(new Vector3Int(x1 * roomSize.x, y1 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossRight1.text);
+        CreateBridge(new Vector3Int(x1 * roomSize.x + 100, y1 * roomSize.y - roomSize.y / 2 + 2, 0), true);
+
+        LoadRoomFromString(new Vector3Int(x2 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossRight2.text);
+        CreateBridge(new Vector3Int(x2 * roomSize.x + 100, y2 * roomSize.y - roomSize.y / 2 + 2, 0), true);
+
+        LoadRoomFromString(new Vector3Int(x3 * roomSize.x, y1 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossLeft1.text);
+        CreateBridge(new Vector3Int(x3 * roomSize.x - 1, y1 * roomSize.y - roomSize.y / 2 + 2, 0), false);
+
+        LoadRoomFromString(new Vector3Int(x4 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0), miniBossLeft2.text);
+        CreateBridge(new Vector3Int(x4 * roomSize.x - 1, y2 * roomSize.y - roomSize.y / 2 + 2, 0), false);
 
         Cleanup();
     }
