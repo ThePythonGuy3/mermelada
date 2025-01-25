@@ -1,33 +1,18 @@
-/*using UnityEngine.InputSystem;
-using UnityEngine;
-
-public class PlayerLook : MonoBehaviour
-{
-    private Camera mainCamera;
-    
-
-    private void Awake()
-    {
-        mainCamera = Camera.main;
-    }
-
-    public void LookTo(Vector2 _direction)
-    {
-        Debug.Log(_direction);
-        Vector2 position = mainCamera.ScreenToWorldPoint(_direction);
-        transform.up = (position - (Vector2)transform.position).normalized;
-        Debug.Log(transform.up);
-    }
-}*/
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerLook : MonoBehaviour
 {
+    /**
+     * TODO
+     */
     private Camera mainCamera;
 
+    [SerializeField] private Transform pointerTransform;
     [SerializeField] private Transform gunTransform;
+
+    [SerializeField] private float pointerTransformMultiplier = 2.0f;
+    private Vector2 newDirection;
 
     private void Awake()
     {
@@ -37,29 +22,38 @@ public class PlayerLook : MonoBehaviour
     private void Update()
     {
         if (IsUsingGamepad())
-        {   
-            AimWithJoystick();
+        {
+            newDirection = AimWithJoystick();
+            
         }
         else
         {
-            AimWithMouse();
+            newDirection = AimWithMouse();
         }
+
+        RotateGun(newDirection);
     }
 
-    private void AimWithMouse()
+    private Vector2 AimWithMouse()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
         Vector3 worldMousePosition = mainCamera.ScreenToWorldPoint(mousePosition);
 
-        Vector2 aimDirection = (worldMousePosition - gunTransform.position).normalized;
-        RotateGun(aimDirection);
+        Vector2 direction = (worldMousePosition - gunTransform.position).normalized;
+
+        pointerTransform.localPosition = direction.normalized * pointerTransformMultiplier;
+
+        return direction;
     }
 
-    private void AimWithJoystick()
+    private Vector2 AimWithJoystick()
     {
-        Vector2 aimDirection = Gamepad.current.rightStick.ReadValue();
-        Debug.Log(aimDirection);
-        RotateGun(aimDirection);
+        Vector2 direction = Gamepad.current.rightStick.ReadValue();
+
+        // Update Pointer
+        pointerTransform.localPosition = direction.normalized * pointerTransformMultiplier;
+
+        return direction;
     }
 
     private void RotateGun(Vector2 direction)
@@ -71,7 +65,7 @@ public class PlayerLook : MonoBehaviour
     #region HELPER
     private bool IsUsingGamepad()
     {
-        return Gamepad.current != null && Gamepad.current.leftStick.ReadValue().magnitude > 0.1f;
+        return Gamepad.current != null;
     }
     #endregion
 }
