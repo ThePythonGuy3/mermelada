@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D _rb;
     
     [SerializeField] private float _bulletSpeed = 2500f;
+    [SerializeField] private float _stopAfterMovingX = 3;
     // [SerializeField] private int _damage = 10;
 
     [SerializeField] private float _timeToDestroy = 10f;
