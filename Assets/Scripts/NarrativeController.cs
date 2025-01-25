@@ -10,9 +10,9 @@ public class NarrativeController : MonoBehaviour
     public string[] narrativeLines;        // Las frases que se mostrarán
     public float displayTime = 3f;         // Tiempo por frase en pantalla
     public float fadeDuration = 0.5f;      // Duración de los efectos de fade in/out
+    public float fadeToSceneDuration = 2f; // Nueva variable para controlar la duración del fade a negro
 
     public Image image1;                   // Imagen que cambia según la narrativa
-    public Sprite[] animatedSprites;       // Los sprites de la imagen animada
     public Sprite spriteImage2;            // Imagen estática 2
     public Sprite spriteImage3;            // Imagen estática 3
     public float animationFrameRate = 0.2f; // Tiempo entre cambios de sprite en la animación
@@ -22,10 +22,24 @@ public class NarrativeController : MonoBehaviour
     private int currentFrame = 0;          // El índice de la animación
     private float animationTimer = 0f;     // Temporizador para la animación
 
+    public float zoomTimer = 1f;
+
     private void Start()
     {
         // Iniciar la narrativa
         StartCoroutine(ShowNarrative());
+    }
+
+    void Update()
+    {
+        if (zoomTimer > 0f)
+        {
+            zoomTimer -= Time.deltaTime * 0.02f;
+
+            float thingamabob = (1f - zoomTimer) * 0.5f;
+
+            image1.transform.localScale = new Vector3(0.64f + thingamabob, 0.64f + thingamabob, 0.64f + thingamabob);
+        }
     }
 
     private IEnumerator ShowNarrative()
@@ -81,11 +95,13 @@ public class NarrativeController : MonoBehaviour
         if (index == 2)
         {
             image1.sprite = spriteImage2;  // Cambia al sprite estático 2
+            zoomTimer = 1f;
         }
 
         if (index == 4)
         {
             image1.sprite = spriteImage3;  // Cambia al sprite estático 3
+            zoomTimer = 1f;
         }
     }
 
@@ -100,10 +116,10 @@ public class NarrativeController : MonoBehaviour
         fadeOverlay.gameObject.SetActive(true);
 
         // Realizar el fade-in de la pantalla negra
-        while (elapsedTime < fadeDuration)
+        while (elapsedTime < fadeToSceneDuration)  // Usamos la nueva duración
         {
             elapsedTime += Time.deltaTime;
-            fadeColor.a = Mathf.Clamp01(elapsedTime / fadeDuration);
+            fadeColor.a = Mathf.Clamp01(elapsedTime / fadeToSceneDuration);
             fadeOverlay.color = fadeColor;
             yield return null;
         }

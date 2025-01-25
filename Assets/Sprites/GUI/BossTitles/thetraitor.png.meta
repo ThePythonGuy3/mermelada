@@ -447,7 +447,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      thetraitor_0: 6441277459557910404
+      thetraitor_1: -5059857033289981587
+      thetraitor_10: 4648497746522258067
+      thetraitor_11: -843500199460579893
+      thetraitor_12: -2686126838014602426
+      thetraitor_2: -4441632006662082380
+      thetraitor_3: 2536051355688180845
+      thetraitor_4: -2005718810403702425
+      thetraitor_5: -5767278503112140290
+      thetraitor_6: -5768196794382086817
+      thetraitor_7: -5601318394369486574
+      thetraitor_8: -3717279206630223445
+      thetraitor_9: 2176370772067366825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

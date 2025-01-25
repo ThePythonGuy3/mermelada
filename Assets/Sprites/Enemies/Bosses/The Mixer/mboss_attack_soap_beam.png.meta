@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mboss_attack_soap_beam_0: -9179952866264378082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
