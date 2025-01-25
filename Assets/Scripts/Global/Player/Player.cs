@@ -39,9 +39,20 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "HealthAdder")
+        if (other.CompareTag("HealthAdder"))
         {
-            AddTimeHealth(other); // TODO
+            AddTimeHealth(other);
+        }
+        else if (other.CompareTag("Bullet"))
+        {
+            Debug.Log("HI");
+            Bullet bullet = other.gameObject.GetComponent<Bullet>();
+
+            if (bullet.BulleteCanHeal())
+            {
+                bullet.DestroyBullet();
+                _playerHealth.AddToTimeHealth(_timeDamagePerShoot);
+            }
         }
     }
 
@@ -64,7 +75,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
     public static void PlayerIsDead()
     {
-        // DO SOMETHING
+        // DO SOMETHING TODO
         Debug.Log("Player is dead");
     }
     #endregion
@@ -76,7 +87,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
         if (hasShooted)
         {
-            _playerHealth.GetTimeDamage(_timeDamagePerShoot);
+            _playerHealth.TakeTimeDamage(_timeDamagePerShoot);
         }
     }
 

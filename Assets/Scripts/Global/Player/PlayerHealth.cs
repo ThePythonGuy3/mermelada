@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -7,6 +8,11 @@ public class PlayerHealth : MonoBehaviour
     private float _currentTimeHealth;
 
     [SerializeField] private Slider _slider;
+
+    [SerializeField] private TMP_Text _currentTimeHealthText;
+    [SerializeField] private TMP_Text _timeHealthBarReactionstText;
+    private float lasTimeTextChanged = 0;
+    private float maxTimeATExtCanBeShown = 5;
 
     private void Start()
     {
@@ -20,8 +26,20 @@ public class PlayerHealth : MonoBehaviour
     {
         _currentTimeHealth -= Time.deltaTime;
         SetTimeHealth(_currentTimeHealth);
+
+        if (lasTimeTextChanged > maxTimeATExtCanBeShown)
+        {
+            _timeHealthBarReactionstText.text = "";
+        }
+        else
+        {
+            lasTimeTextChanged += Time.deltaTime;
+        }
+
+        WriteCurrentTimeHealth();
     }
 
+    #region MANAGE HEALTH
     public void AddToMaxTimeHealth(float maxTimeHealthToAdd)
     {
         _maxTimeHealth += maxTimeHealthToAdd;
@@ -53,19 +71,45 @@ public class PlayerHealth : MonoBehaviour
         }
 
         SetTimeHealth(_currentTimeHealth);
+        WriteTextHealth(timeHealthToAdd);
     }
+    #endregion
+
+    #region MANAGE TEXT
+    private void WriteTextHealth(float timeHealth)
+    {
+        if (timeHealth < 0)
+        {
+            _timeHealthBarReactionstText.color = Color.red;
+        }
+        else
+        {
+            _timeHealthBarReactionstText.color = Color.green;
+        }
+
+        _timeHealthBarReactionstText.text = timeHealth.ToString();
+
+        lasTimeTextChanged = 0;
+    }
+
+    private void WriteCurrentTimeHealth()
+    {
+        int integerPart = (int)_currentTimeHealth;
+        _currentTimeHealthText.text = integerPart.ToString("D3");
+    }
+    #endregion
 
     private void SetTimeHealth(float health)
     {
         _slider.value = health;
     }
 
-    public void GetTimeDamage(float timeDamage)
+    public void TakeTimeDamage(float timeDamage)
     {
         AddToTimeHealth(- timeDamage);
     }
 
-    public void GetDamage()
+    public void EnemyTakeDamage()
     {
         Debug.Log("Defeated");
     }
