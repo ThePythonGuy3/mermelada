@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a83ea47b2aeede749a167c10b5dab0a7
+guid: 83ab1680836262e448ad6fd68cf2a3fc
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: mboss_sprite_the_mixer
+  - name: boss_obo
     originalName: 
-    pivot: {x: 0.5, y: -0.101123594}
+    pivot: {x: 0.38461536, y: -0.031914894}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 92
-      height: 89
-    spriteID: 9a5d7c571ff39b44eb72a1c15ed0f767
+      width: 52
+      height: 94
+    spriteID: 4bd0b1300b0f3134b917c45fda29a6ad
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 51154314
-    name: mboss_sprite_the_mixer
+    guid: 1075094438
+    name: boss_obo
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: mboss_sprite_the_mixer
+    - name: boss_obo
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 4
-        y: 9
-        width: 92
-        height: 89
-      spriteId: 9a5d7c571ff39b44eb72a1c15ed0f767
+        x: 30
+        y: 3
+        width: 52
+        height: 94
+      spriteId: 4bd0b1300b0f3134b917c45fda29a6ad
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -181,4 +181,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 100, y: 100}
-  previousTextureSize: {x: 128, y: 128}
+  previousTextureSize: {x: 64, y: 128}
