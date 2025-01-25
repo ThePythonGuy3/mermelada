@@ -77,6 +77,14 @@ public class Bullet : MonoBehaviour
     }
     #endregion
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            DestroyBullet();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Wall"))
