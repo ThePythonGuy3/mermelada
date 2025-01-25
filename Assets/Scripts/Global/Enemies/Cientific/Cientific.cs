@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class Cientific : EnemyController
 {
+    void Awake()
+    {
+        _bulletPool = Resources.Load<BulletPool>("BulletPool");
+        _bulletPool = Instantiate(_bulletPool, Vector3.zero, Quaternion.identity);
+    }
+
     void Start()
     {
         attackList = new Attack[1];

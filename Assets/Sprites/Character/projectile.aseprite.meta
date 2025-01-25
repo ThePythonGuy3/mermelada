@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: 97c602a3181b7c94086d61facd5067ed
+    spriteID: 5dcb0f89b69f6be48a9dd0a651f5ef97
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +156,7 @@ ScriptedImporter:
       y: 4
       width: 12
       height: 12
-    spriteID: be42bc030a2a03c468203ebb659ac5c0
+    spriteID: 506c40dbd743d8f4eb58c5f8922dcdeb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -182,7 +182,7 @@ ScriptedImporter:
         y: 2
         width: 8
         height: 8
-      spriteId: 97c602a3181b7c94086d61facd5067ed
+      spriteId: 5dcb0f89b69f6be48a9dd0a651f5ef97
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -191,7 +191,7 @@ ScriptedImporter:
         y: 0
         width: 12
         height: 12
-      spriteId: be42bc030a2a03c468203ebb659ac5c0
+      spriteId: 506c40dbd743d8f4eb58c5f8922dcdeb
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -199,54 +199,6 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Windows Store Apps
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
