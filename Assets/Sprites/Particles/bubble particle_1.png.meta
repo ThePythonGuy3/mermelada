@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5581aab050189fd48962bb13db2f3a6d
+guid: 3e3b0a2f840ae9d4fbfc289d14b7fa10
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -109,6 +109,8 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+=======
   - serializedVersion: 4
     buildTarget: WindowsStoreApps
     maxTextureSize: 2048
@@ -122,6 +124,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+>>>>>>> f186fab01f7013318a8dd21d39f4e81d58d45532
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -160,8 +163,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< HEAD
+    nameFileIdTable: {}
+=======
     nameFileIdTable:
       bubble particle_1_0: 5633076481958812965
+>>>>>>> f186fab01f7013318a8dd21d39f4e81d58d45532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
