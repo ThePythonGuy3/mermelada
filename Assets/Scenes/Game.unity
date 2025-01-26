@@ -2107,6 +2107,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1182474987}
     - target: {fileID: 7368676185728788470, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
+      propertyPath: _maxTimeHealth
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368676185728788470, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
       propertyPath: _currentTimeHealthText
       value: 
       objectReference: {fileID: 263649444}
