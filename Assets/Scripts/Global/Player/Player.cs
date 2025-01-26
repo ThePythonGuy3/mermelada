@@ -21,6 +21,15 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     private Vector3 _direction;
     #endregion
 
+    // Referencias a los objetos del Canvas
+    public Image redOverlay;  // Imagen de la pantalla roja
+    public GameObject deathFigure;  // La figura que aparecerá en la muerte
+    public Button menuButton;  // Botón para volver al menú
+    public TextMeshProUGUI deathText;  // El texto que mostrará la frase aleatoria
+
+    // Arreglo de frases para mostrar aleatoriamente
+    public string[] deathPhrases;
+
     private Rigidbody2D _rb;
 
     private void Awake()
@@ -29,6 +38,15 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _playerShooting = GetComponent<PlayerShooting>();
         _playerLook = GetComponent<PlayerLook>();
         _playerHealth = GetComponent<PlayerHealth>();
+    }
+
+    private void Start()
+    {
+        // Inicialmente desactivar todo (la pantalla roja, la figura, el botón y el texto)
+        redOverlay.gameObject.SetActive(false);
+        deathFigure.SetActive(false);
+        menuButton.gameObject.SetActive(false);
+        deathText.gameObject.SetActive(false);  // Desactivar el texto inicialmente
     }
 
     void FixedUpdate()
@@ -74,13 +92,47 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
     public void Die()
     {
-        // DO SOMETHING TODO
+        // Activar la pantalla roja
+        redOverlay.gameObject.SetActive(true);
+
+        // Activar la figura de la muerte
+        deathFigure.SetActive(true);
+
+        // Activar el botón para volver al menú
+        menuButton.gameObject.SetActive(true);
+
+        // Activar el texto de la frase
+        deathText.gameObject.SetActive(true);
+
+        // Mostrar una frase aleatoria
+        ShowRandomDeathPhrase();
+
+        // Mostrar mensaje de depuración
         Debug.Log("Player is dead");
+
+        // Pausar el tiempo del juego (opcional, si quieres detener todo)
+        Time.timeScale = 0f;
     }
+
+    // Función para mostrar una frase aleatoria
+    private void ShowRandomDeathPhrase()
+    {
+        // Elegir una frase aleatoria del arreglo
+        int randomIndex = Random.Range(0, deathPhrases.Length);
+        deathText.text = deathPhrases[randomIndex];
+    }
+
+    // Función para reiniciar el juego o volver al menú
+    public void GoToMainMenu()
+    {
+        // Aquí puedes poner lo que necesites para cargar la escena del menú
+        SceneManager.LoadScene("MainMenu");  // Suponiendo que la escena se llama "MainMenu"
+    }
+}
     #endregion
 
     #region PLAYER INPUT
-    public void OnAttack(InputAction.CallbackContext ctx)
+    void OnAttack(InputAction.CallbackContext ctx)
     {
         bool hasShooted = _playerShooting.Shoot();
 
@@ -95,4 +147,4 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _direction = ctx.ReadValue<Vector2>();
     }
     #endregion
-}
+
