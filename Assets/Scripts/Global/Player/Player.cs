@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     #endregion
 
     #region HEALTH VARIABLES
-    private PlayerHealth _playerHealth;
+    public PlayerHealth _playerHealth;
     #endregion
 
     #region LOOK VARIABLES

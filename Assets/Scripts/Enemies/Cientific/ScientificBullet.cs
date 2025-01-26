@@ -33,7 +33,7 @@ public class ScientificBullet : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // other.GetComponent<Player>().Die();
-            other.GetComponent<Player>().playerHealth.AddToTimeHealth(- _damage);
+            other.GetComponent<Player>()._playerHealth.AddToTimeHealth(- _damage);
 
             DestroyBullet();
         }
