@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
+
+
     [Header("Dash Settings")]
+    public ParticleSystem dashEffect;
     public float dashForce = 25f; // Force applied during the dash
     public float dashDuration = 0.5f; // How long the dash lasts
     public float dashCooldown = 1f; // Cooldown between dashes
 
     private Rigidbody2D rb;
-    private bool isDashing = false;
+    public bool isDashing = false;
     private float dashTimeRemaining = 0f;
     private float dashCooldownRemaining = 0f;
 
@@ -42,6 +45,13 @@ public class PlayerDash : MonoBehaviour
 
     void StartDash()
     {
+
+        //particles
+
+        if (dashEffect != null)
+        {
+            dashEffect.Play();
+        }
         // Set up dash state
         isDashing = true;
         dashTimeRemaining = dashDuration;

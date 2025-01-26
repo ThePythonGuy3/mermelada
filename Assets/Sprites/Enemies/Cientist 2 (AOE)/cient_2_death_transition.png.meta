@@ -335,7 +335,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cient_2_death_transition_0: 4057539700607514228
+      cient_2_death_transition_1: -4588241759406616289
+      cient_2_death_transition_2: -6527329245597844835
+      cient_2_death_transition_3: -2568598256045851189
+      cient_2_death_transition_4: -3498895645124197422
+      cient_2_death_transition_5: -3548098241464259626
+      cient_2_death_transition_6: -6812584820882000093
+      cient_2_death_transition_7: -5998083166470505914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
