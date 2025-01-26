@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     #endregion
 
     #region HEALTH VARIABLES
-    private PlayerHealth _playerHealth;
+    public PlayerHealth _playerHealth;
     #endregion
 
     #region LOOK VARIABLES
@@ -129,6 +129,59 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     }
 
     public void Die()
+    {
+        // Asegúrate de que solo se llame una vez a Die
+        if (isDead) return;
+
+        Debug.Log("Die() called!");
+
+        // Marcar que el jugador está muerto
+        isDead = true;
+
+        // Activar animación de muerte sin pausar el tiempo
+        StartCoroutine(AnimationDie());
+    }
+
+    IEnumerator AnimationDie()
+    {
+        // Activar la animación de muerte
+        _animator.SetTrigger("DieTrigger");
+
+        // Espera hasta que la animación termine
+        yield return new WaitUntil(() => animationDieFinished);
+
+        // Desactiva el jugador
+        gameObject.SetActive(false);
+
+        // La animación ha terminado, esperar el tiempo antes de activar los UI
+        yield return new WaitForSeconds(delayBeforeUI);
+
+        // Ahora activamos los elementos de la interfaz
+        redOverlay.gameObject.SetActive(true);
+        deathFigure.SetActive(true);
+        menuButton.gameObject.SetActive(true);
+        deathText.gameObject.SetActive(true);
+
+        // Mostrar frase de muerte
+        ShowRandomDeathPhrase();
+
+        // Log para depuración
+        Debug.Log("Player is dead");
+
+        // Pausar el tiempo del juego (después de la animación)
+        Time.timeScale = 0f;
+    }
+
+    public void AnimationDieFinished()
+    {
+        // Marcar que la animación ha terminado
+        Debug.Log("AnimationDieFinished");
+        animationDieFinished = true;
+    }
+
+
+
+    private void ShowRandomDeathPhrase()
     {
         if (isDead) return;
 

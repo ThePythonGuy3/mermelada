@@ -5,13 +5,11 @@ using UnityEngine;
 public class Scientific_1 : EnemyController
 {
     [SerializeField] private ScientificBullet _scientificBullet;
-    [SerializeField] private Animator _scientistAnimatior;
-
+    private Animator _scientistAnimatior;
     private EnemyMover _enemyMover;
+    private ScientificAnimationManager _animationManager;
 
     private float _attackTimer;
-
-    private bool _isAnimationAttackRunning = false;
 
     private void Awake()
     {
@@ -26,6 +24,8 @@ public class Scientific_1 : EnemyController
         };
 
         _enemyMover = gameObject.GetComponent<EnemyMover>();
+        _scientistAnimatior = gameObject.GetComponentInChildren<Animator>();
+        _animationManager = gameObject.GetComponentInChildren<ScientificAnimationManager>();
     }
 
     void Update()
@@ -37,17 +37,10 @@ public class Scientific_1 : EnemyController
             if (_attackTimer > attackList[0].timerSeconds)
             {
                 _attackTimer = 0;
-
+                _animationManager.AnimationAttackHaveStarted();
                 _scientistAnimatior.SetBool("isShooting", true);
-                _isAnimationAttackRunning = true;
 
                 StartCoroutine(WaitUntilAnimationFinishes());
-
-                /*
-                attackList[0].Run();
-                _attackTimer = 0;
-
-                _scientistAnimatior.SetBool("isShooting", false);*/
             }
         }
         else
@@ -61,17 +54,10 @@ public class Scientific_1 : EnemyController
 
     IEnumerator WaitUntilAnimationFinishes()
     {
-        
-        yield return new WaitUntil(() => !_isAnimationAttackRunning);
+        yield return new WaitUntil(() => !_animationManager.IsAnimationAttackRunning());
 
         attackList[0].Run();
         _scientistAnimatior.SetBool("isShooting", false);
-    }
-
-    public void AnimationAttackHaveFinished()
-    {
-        Debug.Log("aaa");
-        _isAnimationAttackRunning = false;
     }
 
     private void Shoot()

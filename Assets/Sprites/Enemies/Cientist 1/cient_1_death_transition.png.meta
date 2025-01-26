@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: a6773632bf4254b4592010756376280f
+guid: 56ddeef1db0f7b14db968140d850f203
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5316832611115855429
-    second: mboss_attack_help_0
+      213: -9073882965473164757
+    second: cient_1_death_transition_0
   - first:
-      213: 2433070267790642493
-    second: mboss_attack_help_1
+      213: -3694859915271637274
+    second: cient_1_death_transition_1
   - first:
-      213: 6352123488685900057
-    second: mboss_attack_help_2
+      213: 6851777822111159509
+    second: cient_1_death_transition_2
   - first:
-      213: 3715600162699363433
-    second: mboss_attack_help_3
+      213: 8076905789062785520
+    second: cient_1_death_transition_3
+  - first:
+      213: 1417476636823518207
+    second: cient_1_death_transition_4
+  - first:
+      213: 7228422508106898115
+    second: cient_1_death_transition_5
+  - first:
+      213: -2419443239308631470
+    second: cient_1_death_transition_6
+  - first:
+      213: -7148872904641121509
+    second: cient_1_death_transition_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,13 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mboss_attack_help_0
+      name: cient_1_death_transition_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 8
-        width: 94
-        height: 91
+        x: 10
+        y: 0
+        width: 14
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54ee5cb071f29c940800000000000000
-      internalID: 5316832611115855429
+      spriteID: b220185b487131280800000000000000
+      internalID: -9073882965473164757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mboss_attack_help_1
+      name: cient_1_death_transition_1
       rect:
         serializedVersion: 2
-        x: 103
-        y: 8
-        width: 94
-        height: 91
+        x: 25
+        y: 15
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3dc931848004c120800000000000000
-      internalID: 2433070267790642493
+      spriteID: 6e67767bb7839bcc0800000000000000
+      internalID: -3694859915271637274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mboss_attack_help_2
+      name: cient_1_death_transition_2
       rect:
         serializedVersion: 2
-        x: 203
-        y: 8
-        width: 94
-        height: 91
+        x: 42
+        y: 0
+        width: 20
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 911c98078a6472850800000000000000
-      internalID: 6352123488685900057
+      spriteID: 5d4d5de70a7661f50800000000000000
+      internalID: 6851777822111159509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mboss_attack_help_3
+      name: cient_1_death_transition_3
       rect:
         serializedVersion: 2
-        x: 303
-        y: 8
-        width: 94
-        height: 91
+        x: 74
+        y: 0
+        width: 20
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +228,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 964441179a6709330800000000000000
-      internalID: 3715600162699363433
+      spriteID: 0f92269950fe61070800000000000000
+      internalID: 8076905789062785520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cient_1_death_transition_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffbf747bd73eba310800000000000000
+      internalID: 1417476636823518207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cient_1_death_transition_5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca562a29f3805460800000000000000
+      internalID: 7228422508106898115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cient_1_death_transition_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252e9ce41396c6ed0800000000000000
+      internalID: -2419443239308631470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cient_1_death_transition_7
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13737638f91acc90800000000000000
+      internalID: -7148872904641121509
       vertices: []
       indices: 
       edges: []
@@ -236,10 +336,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mboss_attack_help_0: 5316832611115855429
-      mboss_attack_help_1: 2433070267790642493
-      mboss_attack_help_2: 6352123488685900057
-      mboss_attack_help_3: 3715600162699363433
+      cient_1_death_transition_0: -9073882965473164757
+      cient_1_death_transition_1: -3694859915271637274
+      cient_1_death_transition_2: 6851777822111159509
+      cient_1_death_transition_3: 8076905789062785520
+      cient_1_death_transition_4: 1417476636823518207
+      cient_1_death_transition_5: 7228422508106898115
+      cient_1_death_transition_6: -2419443239308631470
+      cient_1_death_transition_7: -7148872904641121509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

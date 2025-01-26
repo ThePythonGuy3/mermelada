@@ -26,7 +26,7 @@ public class EnemyMover : MonoBehaviour
             agentOverride2d.Agent.destination = player.transform.position + normalArrow;
         }
 
-        if ((int)Mathf.Abs(Vector3.Distance(player.transform.position, transform.position)) <= (int)minPlayerDistance)
+        if ((int) Mathf.Abs(Vector3.Distance(player.transform.position, transform.position)) <= (int) minPlayerDistance)
         {
             isInRange = true;
         }
