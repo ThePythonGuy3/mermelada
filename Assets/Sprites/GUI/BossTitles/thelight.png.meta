@@ -64,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -156,10 +156,10 @@ TextureImporter:
       name: thelight_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 348
-        width: 188
-        height: 37
+        x: 0
+        y: 0
+        width: 1280
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,209 +174,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: thelight_1
-      rect:
-        serializedVersion: 2
-        x: 229
-        y: 314
-        width: 291
-        height: 114
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d0296a6eadc139050800000000000000
-      internalID: 5806016071108825613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_2
-      rect:
-        serializedVersion: 2
-        x: 556
-        y: 314
-        width: 482
-        height: 114
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e2a763f07419b2f0800000000000000
-      internalID: -956710970486971680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_3
-      rect:
-        serializedVersion: 2
-        x: 1055
-        y: 348
-        width: 188
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c1a9df46cf479f70800000000000000
-      internalID: 9193904877461938629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_4
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 250
-        width: 47
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3743c1208922068a0800000000000000
-      internalID: -6314008641307659149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_5
-      rect:
-        serializedVersion: 2
-        x: 116
-        y: 250
-        width: 226
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa6211082ff4dd8e0800000000000000
-      internalID: -1667088384107927894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_6
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 250
-        width: 183
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87aac20f1d861def0800000000000000
-      internalID: -85171667056416136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_7
-      rect:
-        serializedVersion: 2
-        x: 527
-        y: 250
-        width: 174
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0335f10a3c61f26c0800000000000000
-      internalID: -4166086100833578192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_8
-      rect:
-        serializedVersion: 2
-        x: 702
-        y: 250
-        width: 226
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1b950105ee22f9d0800000000000000
-      internalID: -2742077662015677666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thelight_9
-      rect:
-        serializedVersion: 2
-        x: 928
-        y: 250
-        width: 279
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d4ae284c8c3c5670800000000000000
-      internalID: 8528758367536981206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bfa9f500f3d783f4495fc15c4135bca5
     internalID: 0
     vertices: []
     indices: 
@@ -387,15 +189,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       thelight_0: -9189486064943198341
-      thelight_1: 5806016071108825613
-      thelight_2: -956710970486971680
-      thelight_3: 9193904877461938629
-      thelight_4: -6314008641307659149
-      thelight_5: -1667088384107927894
-      thelight_6: -85171667056416136
-      thelight_7: -4166086100833578192
-      thelight_8: -2742077662015677666
-      thelight_9: 8528758367536981206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
