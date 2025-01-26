@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ScientificAnimationManager : MonoBehaviour
+public class GuardAnimationManager : MonoBehaviour
 {
     private bool _isAnimationAttackRunning = true;
 
@@ -11,7 +11,7 @@ public class ScientificAnimationManager : MonoBehaviour
     }
 
     // AnimationAttackHaveFinished
-    public void Aaa()
+    public void Bbb()
     {
         _isAnimationAttackRunning = false;
     }
