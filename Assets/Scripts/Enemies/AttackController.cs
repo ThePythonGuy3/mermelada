@@ -6,6 +6,9 @@ public class AttackController : MonoBehaviour
     [SerializeField]
     public float delaySeconds = 3;
 
+    [SerializeField]
+    public bool noDelay = false;
+
     EnemyController controller;
 
     private List<Timer> timers = new List<Timer>();
@@ -44,7 +47,7 @@ public class AttackController : MonoBehaviour
         {
             timer.currentTime -= Time.deltaTime / timer.time;
 
-            if (timer.currentTime <= 0 && canAttack)
+            if (timer.currentTime <= 0 && (canAttack || noDelay))
             {
                 timer.currentTime = 1f;
                 timer.attack.Run();

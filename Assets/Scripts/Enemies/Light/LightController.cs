@@ -51,7 +51,7 @@ public class LightController : EnemyController
 
         attackList[0] = new Attack();
         attackList[0].isTrigger = false;
-        attackList[0].timerSeconds = 0.2f;
+        attackList[0].timerSeconds = 0.3f;
         attackList[0].Run = () =>
         {
             float ang = Random.Range(0, Mathf.PI * 2);
@@ -66,14 +66,7 @@ public class LightController : EnemyController
         {
             GameObject obj = GameObject.FindFirstObjectByType<Player>().gameObject;
 
-            Instantiate(bomb, obj.transform.position, transform.rotation);
+            Instantiate(bomb, obj.transform.position, obj.transform.rotation);
         };
-    }
-
-    bool done = false, done2 = false;
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

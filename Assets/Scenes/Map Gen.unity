@@ -465,6 +465,8 @@ MonoBehaviour:
   minibosses:
   - {fileID: 5006788526119254652, guid: 6c49903b7a4fab449b867f6c6922609d, type: 3}
   - {fileID: 5006788526119254652, guid: 339a90e1e3b871b46a59c0e8fa160866, type: 3}
+  - {fileID: 5006788526119254652, guid: 339a90e1e3b871b46a59c0e8fa160866, type: 3}
+  - {fileID: 5006788526119254652, guid: 339a90e1e3b871b46a59c0e8fa160866, type: 3}
   announcer: {fileID: 438591362}
 --- !u!4 &1949710340
 Transform:
@@ -675,26 +677,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 7702081155277306449, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: textures.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7702081155277306449, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: 'textures.Array.data[0]'
-      value: 
-      objectReference: {fileID: 3082013201887256306, guid: 8af46690bfc57954980193982e6ed681, type: 3}
-    - target: {fileID: 7702081155277306449, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: 'textures.Array.data[1]'
-      value: 
-      objectReference: {fileID: -9189486064943198341, guid: 128eb92bed1ec3f4487e8898c80c7dbe, type: 3}
-    - target: {fileID: 7702081155277306449, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: 'textures.Array.data[2]'
-      value: 
-      objectReference: {fileID: 6441277459557910404, guid: f953966aac7305047a1cada5132a1b96, type: 3}
-    - target: {fileID: 7702081155277306449, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: 'textures.Array.data[3]'
-      value: 
-      objectReference: {fileID: -1851388106161598085, guid: 6cbffad6e2e10a443aa652b9358bb1c4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

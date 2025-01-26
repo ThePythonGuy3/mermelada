@@ -349,6 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delaySeconds: 0.5
+  noDelay: 1
 --- !u!61 &2912143255794888070
 BoxCollider2D:
   m_ObjectHideFlags: 0

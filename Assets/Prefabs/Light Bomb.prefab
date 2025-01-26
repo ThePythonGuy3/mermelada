@@ -99,7 +99,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2301811389746728208}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a52fb8f53247c4497dbd03b6d40240, type: 3}
   m_Name: 
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64633920e0d0fcf4e87852d9539a49a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tHA: {fileID: 0}
+  tHA: {fileID: 2385557120524978478}
 --- !u!70 &7284469108597950902
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
