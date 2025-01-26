@@ -161,6 +161,7 @@ MonoBehaviour:
   healthBubble: {fileID: 2162326791159747281, guid: 49b02eda9421ac541a34b025b1086afc, type: 3}
   bomb: {fileID: 2301811389746728208, guid: 7e14b727c23c696448f54dd7844fd6c2, type: 3}
   tHA: {fileID: 9073956621863641120}
+  boton: {fileID: 5815787820732052396, guid: 7539824cbc0649c4396f217ea37a097f, type: 3}
 --- !u!114 &5145908234227528254
 MonoBehaviour:
   m_ObjectHideFlags: 0
