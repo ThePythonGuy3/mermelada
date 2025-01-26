@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -159,10 +159,10 @@ TextureImporter:
       name: thewarden_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 348
-        width: 188
-        height: 37
+        x: 0
+        y: 0
+        width: 1280
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,231 +177,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: thewarden_1
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 317
-        width: 264
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0447e781db05e6500800000000000000
-      internalID: 391338990717793344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_2
-      rect:
-        serializedVersion: 2
-        x: 521
-        y: 317
-        width: 521
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e9e41a8953ccc1550800000000000000
-      internalID: 6133001323137814174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_3
-      rect:
-        serializedVersion: 2
-        x: 1055
-        y: 348
-        width: 188
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b07c7dbcbf307170800000000000000
-      internalID: 8174103403542900914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 250
-        width: 47
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35fffc581c5b62520800000000000000
-      internalID: 2677026871296655187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_5
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 250
-        width: 207
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2243d52460804b830800000000000000
-      internalID: 4085899584908112930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_6
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 250
-        width: 240
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f216a8ed52d1a4c10800000000000000
-      internalID: 2038473829823177007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_7
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 250
-        width: 231
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b65061c5d25c88b50800000000000000
-      internalID: 6595738452893238635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_8
-      rect:
-        serializedVersion: 2
-        x: 743
-        y: 250
-        width: 127
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a69b719259a50aa0800000000000000
-      internalID: -6195359540285040991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_9
-      rect:
-        serializedVersion: 2
-        x: 871
-        y: 250
-        width: 174
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 824a2958d140c35d0800000000000000
-      internalID: -3081583520186719192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: thewarden_10
-      rect:
-        serializedVersion: 2
-        x: 1045
-        y: 250
-        width: 208
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 229e5571d8debb9e0800000000000000
-      internalID: -1604427651989771998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f022a227aa4df9846ab7caa6dc04a59e
     internalID: 0
     vertices: []
     indices: 
@@ -412,16 +192,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       thewarden_0: -1851388106161598085
-      thewarden_1: 391338990717793344
-      thewarden_10: -1604427651989771998
-      thewarden_2: 6133001323137814174
-      thewarden_3: 8174103403542900914
-      thewarden_4: 2677026871296655187
-      thewarden_5: 4085899584908112930
-      thewarden_6: 2038473829823177007
-      thewarden_7: 6595738452893238635
-      thewarden_8: -6195359540285040991
-      thewarden_9: -3081583520186719192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
