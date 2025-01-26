@@ -14,18 +14,32 @@ public class PlayerHealth : MonoBehaviour
     private float lasTimeTextChanged = 0;
     private float maxTimeATExtCanBeShown = 5;
 
+    private Player _playerScript;  // Referencia al script Player
+
     private void Start()
     {
         SetMaxTimeHealth(_maxTimeHealth);
 
         _currentTimeHealth = _maxTimeHealth;
         SetTimeHealth(_currentTimeHealth);
+
+        _playerScript = GetComponent<Player>();  // Asignamos la referencia al script Player
     }
 
     private void FixedUpdate()
     {
         _currentTimeHealth -= Time.deltaTime;
         SetTimeHealth(_currentTimeHealth);
+
+        // Llamar a la función Die si el tiempo llega a cero
+        if (_currentTimeHealth <= 0)
+        {
+            if (_playerScript != null)
+            {
+                _playerScript.Die();  // Llama a la función Die del script Player
+            }
+            _currentTimeHealth = 0; // Asegúrate de que no se pase de cero
+        }
 
         if (lasTimeTextChanged > maxTimeATExtCanBeShown)
         {
@@ -66,7 +80,6 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            // Player.PlayerIsDead();
             _currentTimeHealth = 0;
         }
 

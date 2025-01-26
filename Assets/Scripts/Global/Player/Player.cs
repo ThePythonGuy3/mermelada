@@ -43,11 +43,8 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     // Referencia al Animator del jugador
     [SerializeField] private Animator _animator;
 
-    // Variables de la animación de muerte
     private bool isDead = false;
-
-    // Variable animacion
-    bool animationDieFinished = false;
+    private bool animationDieFinished = false;
 
     private void Awake()
     {
@@ -55,25 +52,15 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _playerShooting = GetComponent<PlayerShooting>();
         _playerLook = GetComponent<PlayerLook>();
         _playerHealth = GetComponent<PlayerHealth>();
-
-        animationDieFinished = false;
-
-        Debug.Log("Player script initialized.");
     }
 
     private void Start()
     {
-        if (redOverlay == null || deathFigure == null || menuButton == null || deathText == null || deathUIController == null || _animator == null)
-        {
-            Debug.LogError("One or more required references are not assigned in the Inspector.");
-        }
-
+        // Inicialización de la UI
         redOverlay.gameObject.SetActive(false);
         deathFigure.SetActive(false);
         menuButton.gameObject.SetActive(false);
         deathText.gameObject.SetActive(false);
-
-        Debug.Log("Player Start() executed. UI elements set to inactive.");
     }
 
     void Update()
@@ -86,112 +73,18 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
-    void FixedUpdate()
-    {
-        float velocity = _speed * Time.deltaTime;
-        _rb.AddForce(_direction * velocity, ForceMode2D.Impulse);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log($"Triggered with object: {other.name}");
-        if (other.CompareTag("HealthAdder"))
-        {
-            AddTimeHealth(other);
-        }
-        else if (other.CompareTag("Bullet"))
-        {
-            Bullet bullet = other.gameObject.GetComponent<Bullet>();
-
-            if (bullet.BulleteCanHeal())
-            {
-                bullet.DestroyBullet();
-                _playerHealth.AddToTimeHealth(_timeDamagePerShoot);
-            }
-        }
-    }
-
-    #region PLAYER HEALTH
-    private void AddTimeHealth(Collider2D other)
-    {
-        TimeHealthAdder timeHealthAdder = other.GetComponent<TimeHealthAdder>();
-
-        if (timeHealthAdder.isMaxTimeHealth)
-        {
-            _playerHealth.AddToMaxTimeHealth(timeHealthAdder.timeHealthToAdd);
-        }
-        else
-        {
-            _playerHealth.AddToTimeHealth(timeHealthAdder.timeHealthToAdd);
-        }
-
-        timeHealthAdder.DestroyHealthAdder();
-    }
-
     public void Die()
     {
         // Asegúrate de que solo se llame una vez a Die
         if (isDead) return;
 
-        Debug.Log("Die() called!");
-
-        // Marcar que el jugador está muerto
         isDead = true;
 
         // Activar animación de muerte sin pausar el tiempo
         StartCoroutine(AnimationDie());
     }
 
-    IEnumerator AnimationDie()
-    {
-        // Activar la animación de muerte
-        _animator.SetTrigger("DieTrigger");
-
-        // Espera hasta que la animación termine
-        yield return new WaitUntil(() => animationDieFinished);
-
-        // Desactiva el jugador
-        gameObject.SetActive(false);
-
-        // La animación ha terminado, esperar el tiempo antes de activar los UI
-        yield return new WaitForSeconds(delayBeforeUI);
-
-        // Ahora activamos los elementos de la interfaz
-        redOverlay.gameObject.SetActive(true);
-        deathFigure.SetActive(true);
-        menuButton.gameObject.SetActive(true);
-        deathText.gameObject.SetActive(true);
-
-        // Mostrar frase de muerte
-        ShowRandomDeathPhrase();
-
-        // Log para depuración
-        Debug.Log("Player is dead");
-
-        // Pausar el tiempo del juego (después de la animación)
-        Time.timeScale = 0f;
-    }
-
-    public void AnimationDieFinished()
-    {
-        // Marcar que la animación ha terminado
-        Debug.Log("AnimationDieFinished");
-        animationDieFinished = true;
-    }
-
-
-
-    private void ShowRandomDeathPhrase()
-    {
-        if (isDead) return;
-
-        Debug.Log("Die() called!");
-
-        isDead = true;
-
-        StartCoroutine(AnimationDie());
-    }
-
+    // Aquí está la única definición del método AnimationDie
     IEnumerator AnimationDie()
     {
         Debug.Log("Starting AnimationDie coroutine.");
@@ -205,6 +98,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _animator.SetTrigger("DieTrigger");
         Debug.Log("DieTrigger set on animator.");
 
+        // Espera hasta que la animación haya terminado
         yield return new WaitUntil(() => animationDieFinished);
         Debug.Log("Animation finished.");
 
@@ -222,6 +116,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
+    // Aquí está la única definición del método AnimationDieFinished
     public void AnimationDieFinished()
     {
         Debug.Log("AnimationDieFinished method called.");
@@ -232,7 +127,6 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     {
         SceneManager.LoadScene("MainMenu");
     }
-    #endregion
 
     #region PLAYER INPUT
     public void OnAttack(InputAction.CallbackContext ctx)
