@@ -1509,7 +1509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2710343619331006990, guid: 474f0a37ab1d96745ab0140344f83eef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2710343619331006990, guid: 474f0a37ab1d96745ab0140344f83eef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1892,7 +1892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.247101, y: -3.0794067}
+  m_AnchoredPosition: {x: -12.24707, y: -3.0794067}
   m_SizeDelta: {x: 42.6912, y: 32.4452}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447045327
@@ -3055,12 +3055,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonEnemyPrefabs:
   - {fileID: 6280431761253528231, guid: a2470590fffc6954688cad328fc61316, type: 3}
+  - {fileID: 2701969072776535134, guid: 6b99e306735fe0a4cbab1e64e9745ac6, type: 3}
   player: {fileID: 1088001959}
   tilemap: {fileID: 163719384}
   floorTile: {fileID: 11400000, guid: b12f6a190791b404ea83658fbad56c67, type: 2}
   defaultFloorTile: {fileID: 11400000, guid: 2586f2bffe3ad4245b9b7a035bd6861f, type: 2}
   minibosses:
+  - {fileID: 5006788526119254652, guid: 14646adbcf152e6448f6a50f21019664, type: 3}
   - {fileID: 5006788526119254652, guid: 6c49903b7a4fab449b867f6c6922609d, type: 3}
+  - {fileID: 5006788526119254652, guid: 339a90e1e3b871b46a59c0e8fa160866, type: 3}
   announcer: {fileID: 162004338}
 --- !u!4 &2128139077
 Transform:
