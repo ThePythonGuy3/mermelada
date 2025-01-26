@@ -12,6 +12,8 @@ public class NarrativeController : MonoBehaviour
     public float fadeDuration = 0.5f;      // Duración de los efectos de fade in/out
     public float fadeToSceneDuration = 2f; // Nueva variable para controlar la duración del fade a negro
 
+    
+    public int destiny = 1;
     public Image image1;                   // Imagen que cambia según la narrativa
     public Sprite spriteImage2;            // Imagen estática 2
     public Sprite spriteImage3;            // Imagen estática 3
@@ -23,6 +25,10 @@ public class NarrativeController : MonoBehaviour
     private float animationTimer = 0f;     // Temporizador para la animación
 
     public float zoomTimer = 1f;
+
+    public float normalTimeScale = 1f;
+    public float fastTimeScale = 2f; // Este valor puede ser ajustado a la velocidad deseada
+    private bool isFastForwarding = false;
 
     private void Start()
     {
@@ -40,6 +46,7 @@ public class NarrativeController : MonoBehaviour
 
             image1.transform.localScale = new Vector3(0.64f + thingamabob, 0.64f + thingamabob, 0.64f + thingamabob);
         }
+        
     }
 
     private IEnumerator ShowNarrative()
@@ -124,7 +131,11 @@ public class NarrativeController : MonoBehaviour
             yield return null;
         }
 
-        // Cambiar a la escena "Game"
+        if (destiny == 1) {
+            // Cambiar a la escena "Game"
         SceneManager.LoadScene("Game");
+        } else {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
