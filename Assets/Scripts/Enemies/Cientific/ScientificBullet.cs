@@ -7,6 +7,7 @@ public class ScientificBullet : MonoBehaviour
 
     [SerializeField] private float _bulletSpeed = 2500f;
     [SerializeField] private float _timeToDestroy = 6f;
+    [SerializeField] private float _damage;
     private float _timerToDestroy;
 
     private void Awake()
@@ -31,7 +32,9 @@ public class ScientificBullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().Die();
+            // other.GetComponent<Player>().Die();
+            other.GetComponent<Player>().playerHealth.AddToTimeHealth(- _damage);
+
             DestroyBullet();
         }
         else if (other.CompareTag("Wall"))

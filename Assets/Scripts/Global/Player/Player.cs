@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     #endregion
 
     #region HEALTH VARIABLES
-    private PlayerHealth _playerHealth;
+    [NonSerialized] public PlayerHealth playerHealth;
     #endregion
 
     #region LOOK VARIABLES
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _rb = GetComponent<Rigidbody2D>();
         _playerShooting = GetComponent<PlayerShooting>();
         _playerLook = GetComponent<PlayerLook>();
-        _playerHealth = GetComponent<PlayerHealth>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     void FixedUpdate()
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
             if (bullet.BulleteCanHeal())
             {
                 bullet.DestroyBullet();
-                _playerHealth.AddToTimeHealth(_timeDamagePerShoot);
+                playerHealth.AddToTimeHealth(_timeDamagePerShoot);
             }
         }
     }
@@ -62,11 +63,11 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
         if (timeHealthAdder.isMaxTimeHealth)
         {
-            _playerHealth.AddToMaxTimeHealth(timeHealthAdder.timeHealthToAdd);
+            playerHealth.AddToMaxTimeHealth(timeHealthAdder.timeHealthToAdd);
         }
         else
         {
-            _playerHealth.AddToTimeHealth(timeHealthAdder.timeHealthToAdd);
+            playerHealth.AddToTimeHealth(timeHealthAdder.timeHealthToAdd);
         }
 
         timeHealthAdder.DestroyHealthAdder();
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
         if (hasShooted)
         {
-            _playerHealth.TakeTimeDamage(_timeDamagePerShoot);
+            playerHealth.TakeTimeDamage(_timeDamagePerShoot);
         }
     }
 
