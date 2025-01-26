@@ -43,7 +43,10 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     [SerializeField] private Animator _animator;
 
     // Variables de la animación de muerte
-    private bool isDead = false;  // Verificar si ya está muerto
+    private bool isDead = false;
+
+    // Variable animacion
+    bool animationDieFinished = false;
 
     private void Awake()
     {
@@ -51,6 +54,8 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _playerShooting = GetComponent<PlayerShooting>();
         _playerLook = GetComponent<PlayerLook>();
         _playerHealth = GetComponent<PlayerHealth>();
+
+        animationDieFinished = false;
     }
 
     private void Start()
@@ -64,7 +69,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     void Update()
     {
         // Presiona la tecla "K" para morir instantáneamente (solo para pruebas)
-        if (Keyboard.current.kKey.wasPressedThisFrame && !isDead)  // Solo morir si no está muerto
+        if (Keyboard.current.kKey.wasPressedThisFrame)
         {
             Debug.Log("Forced death for testing.");
             Die();
@@ -113,43 +118,57 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     }
 
     public void Die()
-    {
-        // Si ya está muerto, no ejecutar la animación de nuevo
-        if (isDead)
-            return;
+{
+    // Asegúrate de que solo se llame una vez a Die
+    if (isDead) return;
 
-        Debug.Log("Die() called!");
+    Debug.Log("Die() called!");
 
-        // Marcar que el jugador está muerto
-        isDead = true;
+    // Marcar que el jugador está muerto
+    isDead = true;
 
-        // Activar la animación de muerte
-        _animator.SetTrigger("DieTrigger");
+    // Activar animación de muerte sin pausar el tiempo
+    StartCoroutine(AnimationDie());
+}
 
-        // Espera a que la animación termine (basado en la duración de la animación)
-        StartCoroutine(HandleDeathAnimation());
-    }
+IEnumerator AnimationDie()
+{
+    // Activar la animación de muerte
+    _animator.SetTrigger("DieTrigger");
 
-    IEnumerator HandleDeathAnimation()
-    {
-        // Esperamos hasta que la animación termine antes de mostrar el panel de muerte
-        yield return new WaitForSeconds(2f); // Espera hasta que termine la animación de muerte (ajusta este tiempo según tu animación)
+    // Espera hasta que la animación termine
+    yield return new WaitUntil(() => animationDieFinished);
 
-        // Ahora activamos los elementos de la interfaz
-        redOverlay.gameObject.SetActive(true);
-        deathFigure.SetActive(true);
-        menuButton.gameObject.SetActive(true);
-        deathText.gameObject.SetActive(true);
+    // Desactiva el jugador
+    gameObject.SetActive(false);
 
-        // Mostrar frase de muerte
-        ShowRandomDeathPhrase();
+    // La animación ha terminado, esperar el tiempo antes de activar los UI
+    yield return new WaitForSeconds(delayBeforeUI);
 
-        // Log para depuración
-        Debug.Log("Player is dead");
+    // Ahora activamos los elementos de la interfaz
+    redOverlay.gameObject.SetActive(true);
+    deathFigure.SetActive(true);
+    menuButton.gameObject.SetActive(true);
+    deathText.gameObject.SetActive(true);
 
-        // Pausar el tiempo del juego (después de la animación)
-        Time.timeScale = 0f;
-    }
+    // Mostrar frase de muerte
+    ShowRandomDeathPhrase();
+
+    // Log para depuración
+    Debug.Log("Player is dead");
+
+    // Pausar el tiempo del juego (después de la animación)
+    Time.timeScale = 0f;
+}
+
+public void AnimationDieFinished()
+{
+    // Marcar que la animación ha terminado
+    Debug.Log("AnimationDieFinished");
+    animationDieFinished = true;
+}
+
+
 
     private void ShowRandomDeathPhrase()
     {
