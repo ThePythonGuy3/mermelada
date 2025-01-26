@@ -394,6 +394,6 @@ public class MapLoader : MonoBehaviour
 
         Cleanup();
 
-        surface.BuildNavMeshAsync();
+        if (surface != null) surface.BuildNavMeshAsync();
     }
 }

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1006298083601335298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.416, y: 0.439, z: 1.1877196}
+  m_LocalPosition: {x: 0.416, y: 0.441, z: 1.1877196}
   m_LocalScale: {x: 0.047700044, y: 0.051575974, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,6 +97,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7248228876049585186}
   - component: {fileID: 1708188908496009555}
+  - component: {fileID: 2059347017218764865}
+  - component: {fileID: 5145908234227528254}
   m_Layer: 0
   m_Name: The Mixer
   m_TagString: Untagged
@@ -176,6 +178,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2059347017218764865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5006788526119254652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5530f89a1468e49a2101ce3f77786c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRoomCenter: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
+--- !u!114 &5145908234227528254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5006788526119254652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abbdbdbbced8344fadd41c6b0079b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delaySeconds: 5
 --- !u!1 &6873005287833716015
 GameObject:
   m_ObjectHideFlags: 0
