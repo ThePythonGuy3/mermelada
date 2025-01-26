@@ -321,6 +321,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2009,7 +2022,83 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SmokePuff_0: 1676100204060196181
+      SmokePuff_1: 4993151254387156173
+      SmokePuff_10: 1159830689546351831
+      SmokePuff_11: 2114426755229936085
+      SmokePuff_12: -6744924905756457188
+      SmokePuff_13: -108572217745766625
+      SmokePuff_14: -3634898397430784429
+      SmokePuff_15: -1054759733276884614
+      SmokePuff_16: 6889226480432344394
+      SmokePuff_17: 6779271727780762369
+      SmokePuff_18: -4341009233532635057
+      SmokePuff_19: -8392102615460010759
+      SmokePuff_2: 885950209466826984
+      SmokePuff_20: 4270973810674372014
+      SmokePuff_21: 7247921584648725253
+      SmokePuff_22: -9206721343044126597
+      SmokePuff_23: -8490517548138444041
+      SmokePuff_24: 5063166492663487267
+      SmokePuff_25: -8811815581594595146
+      SmokePuff_26: 2675623212341889270
+      SmokePuff_27: 1102452929858714162
+      SmokePuff_28: -8473679911318845180
+      SmokePuff_29: 4617227597913978055
+      SmokePuff_3: 5531321796764002971
+      SmokePuff_30: -2035931334734096709
+      SmokePuff_31: 7613874022761012637
+      SmokePuff_32: 7962186719177667375
+      SmokePuff_33: 1296688221188437988
+      SmokePuff_34: -1604809460702498080
+      SmokePuff_35: 8641596139002697523
+      SmokePuff_36: 3627589565651651636
+      SmokePuff_37: -8158005294109443332
+      SmokePuff_38: 1893125688496285077
+      SmokePuff_39: 4755676664516478947
+      SmokePuff_4: 8174707471761500483
+      SmokePuff_40: -3542285534891659626
+      SmokePuff_41: -2812475085865230598
+      SmokePuff_42: -621106572046184175
+      SmokePuff_43: -9033485714247218131
+      SmokePuff_44: -6664683675341392854
+      SmokePuff_45: 7974339884665089480
+      SmokePuff_46: 3778908625817828023
+      SmokePuff_47: -3604212528011947603
+      SmokePuff_48: -800873519775889015
+      SmokePuff_49: -4082780526979097326
+      SmokePuff_5: -1959506502343098138
+      SmokePuff_50: -8538142499190537417
+      SmokePuff_51: -7689010399727574396
+      SmokePuff_52: 3123088223634619222
+      SmokePuff_53: 6254749162324601364
+      SmokePuff_54: 2691210284654348349
+      SmokePuff_55: 4144895359377072886
+      SmokePuff_56: -8852712351009943618
+      SmokePuff_57: -8344317125671605342
+      SmokePuff_58: 418091547489294358
+      SmokePuff_59: -7955321828576302110
+      SmokePuff_6: 1931506984277199307
+      SmokePuff_60: -5856086934873033714
+      SmokePuff_61: 2546469303001596274
+      SmokePuff_62: -3692294489041446477
+      SmokePuff_63: 181599889937618145
+      SmokePuff_64: -1702288102507560575
+      SmokePuff_65: -5925099807132861644
+      SmokePuff_66: -2622057991677555665
+      SmokePuff_67: -4314445188622940465
+      SmokePuff_68: -1108331529041283801
+      SmokePuff_69: 6347600116318806395
+      SmokePuff_7: -4527348181303335126
+      SmokePuff_70: -8914349701027558632
+      SmokePuff_71: 1212888559302796707
+      SmokePuff_72: -5722290180192125989
+      SmokePuff_73: -4120304472883357921
+      SmokePuff_74: -1513093499445477566
+      SmokePuff_75: 2598573173875833377
+      SmokePuff_8: -8010302961098309034
+      SmokePuff_9: 261027046202653052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

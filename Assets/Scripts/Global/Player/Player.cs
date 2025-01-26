@@ -38,6 +38,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     public float delayBeforeUI = 2f; // Tiempo de espera en segundos
 
     private Rigidbody2D _rb;
+    public DeathUIController deathUIController;
 
     // Referencia al Animator del jugador
     [SerializeField] private Animator _animator;
@@ -56,14 +57,23 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _playerHealth = GetComponent<PlayerHealth>();
 
         animationDieFinished = false;
+
+        Debug.Log("Player script initialized.");
     }
 
     private void Start()
     {
+        if (redOverlay == null || deathFigure == null || menuButton == null || deathText == null || deathUIController == null || _animator == null)
+        {
+            Debug.LogError("One or more required references are not assigned in the Inspector.");
+        }
+
         redOverlay.gameObject.SetActive(false);
         deathFigure.SetActive(false);
         menuButton.gameObject.SetActive(false);
         deathText.gameObject.SetActive(false);
+
+        Debug.Log("Player Start() executed. UI elements set to inactive.");
     }
 
     void Update()
@@ -84,6 +94,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Triggered with object: {other.name}");
         if (other.CompareTag("HealthAdder"))
         {
             AddTimeHealth(other);
@@ -118,62 +129,50 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     }
 
     public void Die()
-{
-    // Asegúrate de que solo se llame una vez a Die
-    if (isDead) return;
-
-    Debug.Log("Die() called!");
-
-    // Marcar que el jugador está muerto
-    isDead = true;
-
-    // Activar animación de muerte sin pausar el tiempo
-    StartCoroutine(AnimationDie());
-}
-
-IEnumerator AnimationDie()
-{
-    // Activar la animación de muerte
-    _animator.SetTrigger("DieTrigger");
-
-    // Espera hasta que la animación termine
-    yield return new WaitUntil(() => animationDieFinished);
-
-    // Desactiva el jugador
-    gameObject.SetActive(false);
-
-    // La animación ha terminado, esperar el tiempo antes de activar los UI
-    yield return new WaitForSeconds(delayBeforeUI);
-
-    // Ahora activamos los elementos de la interfaz
-    redOverlay.gameObject.SetActive(true);
-    deathFigure.SetActive(true);
-    menuButton.gameObject.SetActive(true);
-    deathText.gameObject.SetActive(true);
-
-    // Mostrar frase de muerte
-    ShowRandomDeathPhrase();
-
-    // Log para depuración
-    Debug.Log("Player is dead");
-
-    // Pausar el tiempo del juego (después de la animación)
-    Time.timeScale = 0f;
-}
-
-public void AnimationDieFinished()
-{
-    // Marcar que la animación ha terminado
-    Debug.Log("AnimationDieFinished");
-    animationDieFinished = true;
-}
-
-
-
-    private void ShowRandomDeathPhrase()
     {
-        int randomIndex = Random.Range(0, deathPhrases.Length);
-        deathText.text = deathPhrases[randomIndex];
+        if (isDead) return;
+
+        Debug.Log("Die() called!");
+
+        isDead = true;
+
+        StartCoroutine(AnimationDie());
+    }
+
+    IEnumerator AnimationDie()
+    {
+        Debug.Log("Starting AnimationDie coroutine.");
+
+        if (_animator == null)
+        {
+            Debug.LogError("Animator is null. Animation will not play.");
+            yield break;
+        }
+
+        _animator.SetTrigger("DieTrigger");
+        Debug.Log("DieTrigger set on animator.");
+
+        yield return new WaitUntil(() => animationDieFinished);
+        Debug.Log("Animation finished.");
+
+        gameObject.SetActive(false);
+        Debug.Log("Player game object deactivated.");
+
+        if (deathUIController != null)
+        {
+            deathUIController.ShowDeathUI(delayBeforeUI);
+            Debug.Log("Death UI Controller called to show UI.");
+        }
+        else
+        {
+            Debug.LogError("DeathUIController is null. Cannot show death UI.");
+        }
+    }
+
+    public void AnimationDieFinished()
+    {
+        Debug.Log("AnimationDieFinished method called.");
+        animationDieFinished = true;
     }
 
     public void GoToMainMenu()
@@ -183,7 +182,7 @@ public void AnimationDieFinished()
     #endregion
 
     #region PLAYER INPUT
-    public void OnAttack(InputAction.CallbackContext ctx) // Cambiado a public
+    public void OnAttack(InputAction.CallbackContext ctx)
     {
         bool hasShooted = _playerShooting.Shoot();
 
@@ -193,12 +192,12 @@ public void AnimationDieFinished()
         }
     }
 
-    public void OnMove(InputAction.CallbackContext ctx) // Cambiado a public
+    public void OnMove(InputAction.CallbackContext ctx)
     {
         _direction = ctx.ReadValue<Vector2>();
     }
 
-    public void OnJump(InputAction.CallbackContext ctx) // Método extra si existe en la interfaz
+    public void OnJump(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
         {
