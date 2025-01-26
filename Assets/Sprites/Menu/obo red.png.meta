@@ -1,40 +1,10 @@
 fileFormatVersion: 2
-guid: 6cbffad6e2e10a443aa652b9358bb1c4
+guid: 691c48554e3bd1940b603c1378dd087b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1851388106161598085
-    second: thewarden_0
-  - first:
-      213: 391338990717793344
-    second: thewarden_1
-  - first:
-      213: 6133001323137814174
-    second: thewarden_2
-  - first:
-      213: 8174103403542900914
-    second: thewarden_3
-  - first:
-      213: 2677026871296655187
-    second: thewarden_4
-  - first:
-      213: 4085899584908112930
-    second: thewarden_5
-  - first:
-      213: 2038473829823177007
-    second: thewarden_6
-  - first:
-      213: 6595738452893238635
-    second: thewarden_7
-  - first:
-      213: -6195359540285040991
-    second: thewarden_8
-  - first:
-      213: -3081583520186719192
-    second: thewarden_9
-  - first:
-      213: -1604427651989771998
-    second: thewarden_10
+      213: -6968906919263650854
+    second: obo red_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: thewarden_0
+      name: obo red_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 720
+        x: 29
+        y: 2
+        width: 54
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b71dad6935c8e46e0800000000000000
-      internalID: -1851388106161598085
+      spriteID: adb378c6418794f90800000000000000
+      internalID: -6968906919263650854
       vertices: []
       indices: 
       edges: []
@@ -181,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f022a227aa4df9846ab7caa6dc04a59e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -191,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      thewarden_0: -1851388106161598085
+      obo red_0: -6968906919263650854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

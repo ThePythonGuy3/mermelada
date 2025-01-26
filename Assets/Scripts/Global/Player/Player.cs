@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections;
 
 public class Player : MonoBehaviour, Controls.IPlayerActions
 {
@@ -21,7 +25,25 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     private Vector3 _direction;
     #endregion
 
+    // Referencias a los objetos del Canvas
+    public Image redOverlay;
+    public GameObject deathFigure;
+    public Button menuButton;
+    public TextMeshProUGUI deathText;
+
+    // Arreglo de frases para mostrar aleatoriamente
+    public string[] deathPhrases;
+
+    // Tiempo de espera antes de activar los elementos UI (panel rojo, botones, etc.)
+    public float delayBeforeUI = 2f; // Tiempo de espera en segundos
+
     private Rigidbody2D _rb;
+
+    // Referencia al Animator del jugador
+    [SerializeField] private Animator _animator;
+
+    // Variables de la animación de muerte
+    private bool isDead = false;  // Verificar si ya está muerto
 
     private void Awake()
     {
@@ -29,6 +51,24 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _playerShooting = GetComponent<PlayerShooting>();
         _playerLook = GetComponent<PlayerLook>();
         _playerHealth = GetComponent<PlayerHealth>();
+    }
+
+    private void Start()
+    {
+        redOverlay.gameObject.SetActive(false);
+        deathFigure.SetActive(false);
+        menuButton.gameObject.SetActive(false);
+        deathText.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        // Presiona la tecla "K" para morir instantáneamente (solo para pruebas)
+        if (Keyboard.current.kKey.wasPressedThisFrame && !isDead)  // Solo morir si no está muerto
+        {
+            Debug.Log("Forced death for testing.");
+            Die();
+        }
     }
 
     void FixedUpdate()
@@ -74,13 +114,57 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
     public void Die()
     {
-        // DO SOMETHING TODO
+        // Si ya está muerto, no ejecutar la animación de nuevo
+        if (isDead)
+            return;
+
+        Debug.Log("Die() called!");
+
+        // Marcar que el jugador está muerto
+        isDead = true;
+
+        // Activar la animación de muerte
+        _animator.SetTrigger("DieTrigger");
+
+        // Espera a que la animación termine (basado en la duración de la animación)
+        StartCoroutine(HandleDeathAnimation());
+    }
+
+    IEnumerator HandleDeathAnimation()
+    {
+        // Esperamos hasta que la animación termine antes de mostrar el panel de muerte
+        yield return new WaitForSeconds(2f); // Espera hasta que termine la animación de muerte (ajusta este tiempo según tu animación)
+
+        // Ahora activamos los elementos de la interfaz
+        redOverlay.gameObject.SetActive(true);
+        deathFigure.SetActive(true);
+        menuButton.gameObject.SetActive(true);
+        deathText.gameObject.SetActive(true);
+
+        // Mostrar frase de muerte
+        ShowRandomDeathPhrase();
+
+        // Log para depuración
         Debug.Log("Player is dead");
+
+        // Pausar el tiempo del juego (después de la animación)
+        Time.timeScale = 0f;
+    }
+
+    private void ShowRandomDeathPhrase()
+    {
+        int randomIndex = Random.Range(0, deathPhrases.Length);
+        deathText.text = deathPhrases[randomIndex];
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     #endregion
 
     #region PLAYER INPUT
-    public void OnAttack(InputAction.CallbackContext ctx)
+    public void OnAttack(InputAction.CallbackContext ctx) // Cambiado a public
     {
         bool hasShooted = _playerShooting.Shoot();
 
@@ -90,9 +174,17 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
-    public void OnMove(InputAction.CallbackContext ctx)
+    public void OnMove(InputAction.CallbackContext ctx) // Cambiado a public
     {
         _direction = ctx.ReadValue<Vector2>();
+    }
+
+    public void OnJump(InputAction.CallbackContext ctx) // Método extra si existe en la interfaz
+    {
+        if (ctx.performed)
+        {
+            Debug.Log("Jumping!");
+        }
     }
     #endregion
 }

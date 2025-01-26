@@ -87,10 +87,10 @@ public class CameraController : MonoBehaviour
         {
             origin = transform.position;
             originalSize = camera.orthographicSize;
-            targetSize = bossRoom ? 50 : 11;
+            targetSize = bossRoom ? 35 : 11;
 
             originalScale = transform.localScale.x;
-            targetScale = bossRoom ? 5 : 1;
+            targetScale = bossRoom ? 3.5f : 1;
 
             transition = 1;
             transitionSpeed = bossRoom ? 0.25f : 1f;
