@@ -52,6 +52,13 @@ public class AudioManager : MonoBehaviour
 
     public void PlayClick()
     {
+        // Verificar si AudioSource es nulo antes de intentar reproducir el sonido
+        if (mAudioSource == null)
+        {
+            Debug.LogError("AudioSource is missing or destroyed.");
+            return;
+        }
+
         // Reproducir el sonido de clic
         mAudioSource.PlayOneShot(click);
     }
