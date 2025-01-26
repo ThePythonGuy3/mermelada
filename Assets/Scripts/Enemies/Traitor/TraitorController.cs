@@ -12,6 +12,10 @@ public class TraitorController : EnemyController
     private NavMeshAgent agent;
     private EnemyMover enemyMover;
 
+    [SerializeField] private TimeHealthAdder tHA;
+
+    private float tHATimer = 0f;
+
     public void Hit()
     {
         health--;
@@ -53,6 +57,11 @@ public class TraitorController : EnemyController
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        tHA.onDestroy = () =>
+        {
+            tHATimer = 1f;
+        };
+
         agent = GetComponent<NavMeshAgent>();
         enemyMover = GetComponent<EnemyMover>();
 
@@ -69,6 +78,15 @@ public class TraitorController : EnemyController
     
     void Update()
     {
+        if (tHATimer > 0f)
+        {
+            tHA.enabled = false;
+            tHATimer -= Time.deltaTime;
+        }
+        else
+            tHA.enabled = true;
+
+
         if (dashTime > 0f)
         {
             agent.speed = 250f;

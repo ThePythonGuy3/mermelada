@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7705543584034746188}
   - component: {fileID: 4499695694901292939}
   - component: {fileID: 8445221210975610391}
+  - component: {fileID: 811847222111884444}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -144,3 +145,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicMixer: {fileID: 24100000, guid: 9964c98482db472418e913aeb79af5d8, type: 2}
   click: {fileID: 8300000, guid: 3ad29818fcf7e5041a23dc0e31f9752b, type: 3}
+--- !u!114 &811847222111884444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573895858969570533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf760762da5327499d6a89f3911b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicMixer: {fileID: 24100000, guid: 9964c98482db472418e913aeb79af5d8, type: 2}
+  click: {fileID: 8300000, guid: 394ba34cc7cf8cb47b4165be288487b4, type: 3}

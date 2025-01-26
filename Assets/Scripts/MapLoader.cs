@@ -387,10 +387,11 @@ public class MapLoader : MonoBehaviour
         CreateBridge(new Vector3Int(x3 * roomSize.x - 1, y1 * roomSize.y - roomSize.y / 2 + 3, 0), false);
         miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));
 
-        topLeft = new Vector3Int(x4 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0);
+        // No time lol
+        /*topLeft = new Vector3Int(x4 * roomSize.x, y2 * roomSize.y + 50 - roomSize.y / 2, 0);
         LoadRoomFromString(topLeft, miniBossLeft2.text);
         CreateBridge(new Vector3Int(x4 * roomSize.x - 1, y2 * roomSize.y - roomSize.y / 2 + 3, 0), false);
-        miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));
+        miniBossRooms.Add(new Vector2Int(topLeft.x, topLeft.y));*/
 
         Cleanup();
 
