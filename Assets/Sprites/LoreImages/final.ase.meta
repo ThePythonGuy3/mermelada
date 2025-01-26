@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83ab1680836262e448ad6fd68cf2a3fc
+guid: be0210803aa6bdd4caf1d78af34eb707
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: boss_obo
+  - name: final
     originalName: 
-    pivot: {x: 0.38461536, y: -0.031914894}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 52
-      height: 94
-    spriteID: 4481e1816b5fb6b4096470215f44280e
+      width: 1280
+      height: 720
+    spriteID: 874aaf22329e25c46b747185cce67566
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1075094438
-    name: boss_obo
+    guid: 1319469890
+    name: final
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: boss_obo
+    - name: final
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 30
-        y: 3
-        width: 52
-        height: 94
-      spriteId: 4481e1816b5fb6b4096470215f44280e
+        x: 0
+        y: 0
+        width: 1280
+        height: 720
+      spriteId: 874aaf22329e25c46b747185cce67566
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 100, y: 100}
-  previousTextureSize: {x: 64, y: 128}
+  canvasSize: {x: 1280, y: 720}
+  previousTextureSize: {x: 2048, y: 1024}
