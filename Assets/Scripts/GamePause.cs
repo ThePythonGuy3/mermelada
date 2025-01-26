@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePause : MonoBehaviour
 {
@@ -38,6 +39,16 @@ public class GamePause : MonoBehaviour
         isPaused = false;  // Establecer el estado como no pausado
         Time.timeScale = 1f;  // Reanudar el tiempo del juego (1 significa tiempo normal)
         pauseCanvas.SetActive(false);  // Ocultar el Canvas de pausa
+    }
+
+    public void teleportToMenu()
+    {
+        // Aquí puedes implementar la funcionalidad para iniciar el juego
+        Debug.Log("Play button pressed.");
+        isPaused = false;
+        Time.timeScale = 1f;
+        AudioManager.instance.PlayClick();
+        SceneManager.LoadScene("MainMenu");
     }
 
     

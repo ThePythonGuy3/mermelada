@@ -26,14 +26,14 @@ public class BubbleMovementEffect : MonoBehaviour
         // Aplicamos el movimiento oscilante a todos los botones
         for (int i = 0; i < buttons.Length; i++)
         {
-            // Movimiento oscilante
-            float newY = Mathf.Sin(Time.time * moveSpeed + i) * moveAmount;
+            // Movimiento oscilante (usamos Time.unscaledTime para que el movimiento siga aunque el tiempo esté pausado)
+            float newY = Mathf.Sin(Time.unscaledTime * moveSpeed + i) * moveAmount;
             buttons[i].anchoredPosition = new Vector2(originalPositions[i].x, originalPositions[i].y + newY);
 
             // Rotación opcional (si se activa y si isRotating es true)
             if (applyRotation && isRotating)
             {
-                buttons[i].Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+                buttons[i].Rotate(Vector3.forward, rotationSpeed * Time.unscaledDeltaTime);
             }
         }
     }
