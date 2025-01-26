@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections;
 
 public class Player : MonoBehaviour, Controls.IPlayerActions
 {
@@ -22,15 +26,24 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
     #endregion
 
     // Referencias a los objetos del Canvas
-    public Image redOverlay;  // Imagen de la pantalla roja
-    public GameObject deathFigure;  // La figura que aparecerá en la muerte
-    public Button menuButton;  // Botón para volver al menú
-    public TextMeshProUGUI deathText;  // El texto que mostrará la frase aleatoria
+    public Image redOverlay;
+    public GameObject deathFigure;
+    public Button menuButton;
+    public TextMeshProUGUI deathText;
 
     // Arreglo de frases para mostrar aleatoriamente
     public string[] deathPhrases;
 
+    // Tiempo de espera antes de activar los elementos UI (panel rojo, botones, etc.)
+    public float delayBeforeUI = 2f; // Tiempo de espera en segundos
+
     private Rigidbody2D _rb;
+
+    // Referencia al Animator del jugador
+    [SerializeField] private Animator _animator;
+
+    // Variables de la animación de muerte
+    private bool isDead = false;  // Verificar si ya está muerto
 
     private void Awake()
     {
@@ -42,11 +55,20 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
     private void Start()
     {
-        // Inicialmente desactivar todo (la pantalla roja, la figura, el botón y el texto)
         redOverlay.gameObject.SetActive(false);
         deathFigure.SetActive(false);
         menuButton.gameObject.SetActive(false);
-        deathText.gameObject.SetActive(false);  // Desactivar el texto inicialmente
+        deathText.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        // Presiona la tecla "K" para morir instantáneamente (solo para pruebas)
+        if (Keyboard.current.kKey.wasPressedThisFrame && !isDead)  // Solo morir si no está muerto
+        {
+            Debug.Log("Forced death for testing.");
+            Die();
+        }
     }
 
     void FixedUpdate()
@@ -92,47 +114,57 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
 
     public void Die()
     {
-        // Activar la pantalla roja
+        // Si ya está muerto, no ejecutar la animación de nuevo
+        if (isDead)
+            return;
+
+        Debug.Log("Die() called!");
+
+        // Marcar que el jugador está muerto
+        isDead = true;
+
+        // Activar la animación de muerte
+        _animator.SetTrigger("DieTrigger");
+
+        // Espera a que la animación termine (basado en la duración de la animación)
+        StartCoroutine(HandleDeathAnimation());
+    }
+
+    IEnumerator HandleDeathAnimation()
+    {
+        // Esperamos hasta que la animación termine antes de mostrar el panel de muerte
+        yield return new WaitForSeconds(2f); // Espera hasta que termine la animación de muerte (ajusta este tiempo según tu animación)
+
+        // Ahora activamos los elementos de la interfaz
         redOverlay.gameObject.SetActive(true);
-
-        // Activar la figura de la muerte
         deathFigure.SetActive(true);
-
-        // Activar el botón para volver al menú
         menuButton.gameObject.SetActive(true);
-
-        // Activar el texto de la frase
         deathText.gameObject.SetActive(true);
 
-        // Mostrar una frase aleatoria
+        // Mostrar frase de muerte
         ShowRandomDeathPhrase();
 
-        // Mostrar mensaje de depuración
+        // Log para depuración
         Debug.Log("Player is dead");
 
-        // Pausar el tiempo del juego (opcional, si quieres detener todo)
+        // Pausar el tiempo del juego (después de la animación)
         Time.timeScale = 0f;
     }
 
-    // Función para mostrar una frase aleatoria
     private void ShowRandomDeathPhrase()
     {
-        // Elegir una frase aleatoria del arreglo
         int randomIndex = Random.Range(0, deathPhrases.Length);
         deathText.text = deathPhrases[randomIndex];
     }
 
-    // Función para reiniciar el juego o volver al menú
     public void GoToMainMenu()
     {
-        // Aquí puedes poner lo que necesites para cargar la escena del menú
-        SceneManager.LoadScene("MainMenu");  // Suponiendo que la escena se llama "MainMenu"
+        SceneManager.LoadScene("MainMenu");
     }
-}
     #endregion
 
     #region PLAYER INPUT
-    void OnAttack(InputAction.CallbackContext ctx)
+    public void OnAttack(InputAction.CallbackContext ctx) // Cambiado a public
     {
         bool hasShooted = _playerShooting.Shoot();
 
@@ -142,9 +174,17 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
-    public void OnMove(InputAction.CallbackContext ctx)
+    public void OnMove(InputAction.CallbackContext ctx) // Cambiado a public
     {
         _direction = ctx.ReadValue<Vector2>();
     }
-    #endregion
 
+    public void OnJump(InputAction.CallbackContext ctx) // Método extra si existe en la interfaz
+    {
+        if (ctx.performed)
+        {
+            Debug.Log("Jumping!");
+        }
+    }
+    #endregion
+}
