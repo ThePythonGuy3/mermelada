@@ -31,9 +31,11 @@ public class Manager : MonoBehaviour
             }
         } else
         {
-            spawner.SpawnBoss(center);
-            remainingEnemies = 89255205; // A number xd
-            Lock();
+            if (spawner.SpawnBoss(center))
+            {
+                remainingEnemies = 89255205; // A number xd
+                Lock();
+            }
         }
     }
 

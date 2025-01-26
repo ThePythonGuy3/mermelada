@@ -457,12 +457,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commonEnemyPrefabs:
   - {fileID: 6280431761253528231, guid: a2470590fffc6954688cad328fc61316, type: 3}
+  - {fileID: 2701969072776535134, guid: 6b99e306735fe0a4cbab1e64e9745ac6, type: 3}
   player: {fileID: 818098863}
   tilemap: {fileID: 1646089253}
   floorTile: {fileID: 11400000, guid: b12f6a190791b404ea83658fbad56c67, type: 2}
   defaultFloorTile: {fileID: 11400000, guid: 2586f2bffe3ad4245b9b7a035bd6861f, type: 2}
   minibosses:
   - {fileID: 5006788526119254652, guid: 6c49903b7a4fab449b867f6c6922609d, type: 3}
+  - {fileID: 5006788526119254652, guid: 339a90e1e3b871b46a59c0e8fa160866, type: 3}
+  - {fileID: 5006788526119254652, guid: 339a90e1e3b871b46a59c0e8fa160866, type: 3}
+  - {fileID: 5006788526119254652, guid: 339a90e1e3b871b46a59c0e8fa160866, type: 3}
   announcer: {fileID: 438591362}
 --- !u!4 &1949710340
 Transform:
@@ -673,14 +677,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 7702081155277306449, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: textures.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7702081155277306449, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: 'textures.Array.data[0]'
-      value: 
-      objectReference: {fileID: 3082013201887256306, guid: 8af46690bfc57954980193982e6ed681, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
