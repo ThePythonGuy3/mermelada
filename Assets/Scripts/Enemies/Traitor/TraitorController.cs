@@ -5,7 +5,7 @@ public class TraitorController : EnemyController
 {
     [SerializeField] private GameObject healthBubble, bomb;
 
-    private int health = 20;
+    private int health = 35;
 
     private float dashTime = 0f;
 
@@ -56,7 +56,7 @@ public class TraitorController : EnemyController
         agent = GetComponent<NavMeshAgent>();
         enemyMover = GetComponent<EnemyMover>();
 
-        attackList = new Attack[2];
+        attackList = new Attack[1];
 
         attackList[0] = new Attack();
         attackList[0].isTrigger = false;
@@ -65,23 +65,13 @@ public class TraitorController : EnemyController
         {
             dashTime = 1f;
         };
-
-        attackList[1] = new Attack();
-        attackList[1].isTrigger = false;
-        attackList[1].timerSeconds = 5f;
-        attackList[1].Run = () =>
-        {
-            GameObject obj = GameObject.FindFirstObjectByType<Player>().gameObject;
-
-            Instantiate(bomb, obj.transform.position, obj.transform.rotation);
-        };
     }
     
     void Update()
     {
         if (dashTime > 0f)
         {
-            agent.speed = 120f;
+            agent.speed = 250f;
             enemyMover.minPlayerDistance = 0;
 
             dashTime -= Time.deltaTime * 0.1f;
