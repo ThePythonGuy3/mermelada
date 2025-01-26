@@ -73,6 +73,12 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
+    void FixedUpdate()
+    {
+        float velocity = _speed * Time.deltaTime;
+        _rb.AddForce(_direction * velocity, ForceMode2D.Impulse);
+    }
+
     public void Die()
     {
         // Asegúrate de que solo se llame una vez a Die
@@ -144,12 +150,5 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _direction = ctx.ReadValue<Vector2>();
     }
 
-    public void OnJump(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
-            Debug.Log("Jumping!");
-        }
-    }
     #endregion
 }
