@@ -1,39 +1,82 @@
 using UnityEngine;
 
-public class Dash : MonoBehaviour
+public class PlayerDash : MonoBehaviour
 {
-    [SerializeField] private float _dashDistance;
-    [SerializeField] private float _dashDuration;
-    [SerializeField] private float _dashCouldwon;
-    [SerializeField] private AnimationCurve _dashProgressCurve;
-    private float _currentTime;
 
-    private PlayerLook _playerLook;
 
-    private void Awake()
+    [Header("Dash Settings")]
+    public ParticleSystem dashEffect;
+    public float dashForce = 25f; // Force applied during the dash
+    public float dashDuration = 0.5f; // How long the dash lasts
+    public float dashCooldown = 1f; // Cooldown between dashes
+
+    private Rigidbody2D rb;
+    public bool isDashing = false;
+    private float dashTimeRemaining = 0f;
+    private float dashCooldownRemaining = 0f;
+
+    void Start()
     {
-        _playerLook = GetComponent<PlayerLook>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    void Update()
     {
-        if (CanDash() && Input.GetKeyDown(KeyCode.LeftShift))
+        // Handle dash cooldown
+        if (dashCooldownRemaining > 0)
         {
-            float rotationZ = _playerLook.GetMouseAngle();
-            Quaternion rotation = Quaternion.Euler(0, 0, rotationZ);
-            Vector3 target = Helpers.CalculateTargetPosition(transform.position, rotation, _dashDistance);
-
-            //if (hitToTest.collider.bounds.Contains(telePosition))
-            StartCoroutine(Helpers.LerpComplexPosition(transform, transform.position, target, _dashDuration, _dashProgressCurve));
-
-            _currentTime = 0;
+            dashCooldownRemaining -= Time.deltaTime;
         }
 
-        _currentTime = Time.time;
+        // Check for dash input (e.g., right mouse button) and cooldown
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownRemaining <= 0 && !isDashing)
+        {
+            StartDash();
+        }
     }
 
-    private bool CanDash()
+    void FixedUpdate()
     {
-        return _currentTime > _dashCouldwon;
+        if (isDashing)
+        {
+            DashMovement();
+        }
+    }
+
+    void StartDash()
+    {
+
+        //particles
+
+        if (dashEffect != null)
+        {
+            dashEffect.Play();
+        }
+        // Set up dash state
+        isDashing = true;
+        dashTimeRemaining = dashDuration;
+
+        // Calculate dash direction (towards the mouse)
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 dashDirection = (mousePosition - (Vector2)transform.position).normalized;
+
+        // Apply force for the dash
+        rb.linearVelocity = dashDirection * dashForce;
+
+        // Set cooldown
+        dashCooldownRemaining = dashCooldown;
+    }
+
+    void DashMovement()
+    {
+        // Reduce dash time remaining
+        dashTimeRemaining -= Time.fixedDeltaTime;
+
+        // Stop dash when time is up
+        if (dashTimeRemaining <= 0)
+        {
+            isDashing = false;
+            rb.linearVelocity = Vector2.zero; // Stop movement after the dash
+        }
     }
 }

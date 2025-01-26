@@ -6,9 +6,11 @@ public class EnemyMover : MonoBehaviour
     private AgentOverride2d agentOverride2d;
 
     [SerializeField] public GameObject player;
-    [SerializeField] private float minPlayerDistance = 3;
+    [SerializeField] public float minPlayerDistance = 3;
 
     public bool isInRange;
+
+    private float upd = 0;
 
     void Start()
     {
@@ -17,22 +19,29 @@ public class EnemyMover : MonoBehaviour
 
     void Update()
     {
-        Vector3 normalArrow = transform.position - player.transform.position;
-        normalArrow.Normalize();
-        normalArrow *= minPlayerDistance;
+        if (upd >= 0.05f)
+        {
+            Vector3 normalArrow = transform.position - player.transform.position;
+            normalArrow.Normalize();
+            normalArrow *= minPlayerDistance;
 
-        if (agentOverride2d.Agent.isOnNavMesh)
-        {
-            agentOverride2d.Agent.destination = player.transform.position + normalArrow;
+            if (agentOverride2d.Agent.isOnNavMesh)
+            {
+                agentOverride2d.Agent.destination = player.transform.position + normalArrow;
+            }
+
+            if ((int)Mathf.Abs(Vector3.Distance(player.transform.position, transform.position)) <= (int)minPlayerDistance)
+            {
+                isInRange = true;
+            }
+            else
+            {
+                isInRange = false;
+            }
+
+            upd = 0;
         }
 
-        if ((int) Mathf.Abs(Vector3.Distance(player.transform.position, transform.position)) <= (int) minPlayerDistance)
-        {
-            isInRange = true;
-        }
-        else
-        {
-            isInRange = false;
-        }
+        upd += Time.deltaTime;
     }
 }

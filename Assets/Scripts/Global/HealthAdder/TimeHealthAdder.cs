@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class TimeHealthAdder: MonoBehaviour
 {
@@ -7,8 +8,15 @@ public class TimeHealthAdder: MonoBehaviour
 
     public float timeHealthToAdd;
 
+    [SerializeField] private bool destroy = true;
+
+    public Action onDestroy;
+
     public void DestroyHealthAdder()
     {
-        Destroy(this.gameObject);
+        if (destroy)
+            Destroy(this.gameObject);
+        else
+            onDestroy.Invoke();
     }
 }
