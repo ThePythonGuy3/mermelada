@@ -515,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 8445221210975610391, guid: 575a71c81286b2e428241f2448d2f6bc, type: 3}
       propertyPath: click
       value: 
-      objectReference: {fileID: 8300000, guid: bfbb38db3a099ba45989c60caa683954, type: 3}
+      objectReference: {fileID: 8300000, guid: b5137652aaef7d243b908cfeb3214007, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -586,8 +586,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -654,7 +654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -205}
+  m_AnchoredPosition: {x: 0, y: -201}
   m_SizeDelta: {x: 777.8433, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1825826956
@@ -766,7 +766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -37}
+  m_AnchoredPosition: {x: 0, y: 22}
   m_SizeDelta: {x: 1280, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845825246
@@ -789,7 +789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3506796010499809244, guid: afbe270746d24734d85f488e3f8efecc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a028e900ce5cc541b4cd3e2840e9b42, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -818,6 +818,7 @@ GameObject:
   - component: {fileID: 1931307032}
   - component: {fileID: 1931307031}
   - component: {fileID: 1931307030}
+  - component: {fileID: 1931307033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -864,7 +865,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -899,6 +900,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1931307033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931307029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 2
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &1970156816
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,8 +1016,8 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_Camera: {fileID: 1931307031}
+  m_PlaneDistance: 0.06
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1037,23 +1082,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   narrativeText: {fileID: 1777771167}
   narrativeLines:
-  - Humanity collapses as greed and wealth take over.
-  - Business reigns supreme, and morality is forgotten.
-  - Obo, the CEO of the largest bubble blower company, rules with cruelty.
-  - For years, he has imprisoned bubble families in plastic tubes for profit.
-  - Their suffering is sold as entertainment to a heartless world.
-  - "Tired of the torment, Bob the Bubble vows to rescue Bab from Obo\u2019s grasp."
-  - "No more waiting\u2014Bob is heading to the factory to make Obo pay for his years
-    of suffering."
+  - Thick smoke and explosions poured from Obo's factory, signaling the end of an
+    era.
+  - The battle for Bob's freedom had been long and filled with sacrifice.
+  - Scientists and other workers fled the factory, their faces filled with fear and
+    relief.
+  - "Yet, amidst the destruction, something unexpected emerged from the factory\u2014bubbles."
+  - After years of endless toil with bubble wands, they were finally free.
+  - Sadly, someone had to sacrifice themselves, pressing the button knowing it would
+    explode upon contact.
+  - Bob will forever be remembered as a hero and the liberator of bubbles, his legacy
+    lasting long after the smoke cleared.
   displayTime: 5.5
   fadeDuration: 0.69
   fadeToSceneDuration: 5
+  destiny: 2
   image1: {fileID: 1845825246}
-  spriteImage2: {fileID: 1636318925241012259, guid: 9e79ebe9fdea18f478db31b72c815998, type: 3}
-  spriteImage3: {fileID: 3337427645810508816, guid: e1f84e002c3d976499b67edd033ac787, type: 3}
+  spriteImage2: {fileID: 21300000, guid: 46759582c95069341b73f0b234b60d38, type: 3}
+  spriteImage3: {fileID: 21300000, guid: f3084aee1d389a348b5dcb5b57ab5f75, type: 3}
   animationFrameRate: 0.2
   fadeOverlay: {fileID: 1825826957}
   zoomTimer: 1
+  normalTimeScale: 1
+  fastTimeScale: 2
 --- !u!82 &1970156823
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1064,8 +1115,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9964c98482db472418e913aeb79af5d8, type: 2}
-  m_audioClip: {fileID: 8300000, guid: bfbb38db3a099ba45989c60caa683954, type: 3}
-  m_Resource: {fileID: 8300000, guid: bfbb38db3a099ba45989c60caa683954, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b5137652aaef7d243b908cfeb3214007, type: 3}
+  m_Resource: {fileID: 8300000, guid: b5137652aaef7d243b908cfeb3214007, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
