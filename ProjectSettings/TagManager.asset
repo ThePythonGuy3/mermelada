@@ -3,16 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
-  tags: []
-=======
   tags:
   - HealthAdder
   - Wall
   - Bullet
   - BubbleTank
   - Enemy
->>>>>>> b02ac67d8fdf32dc38abc412617040c31e07db6b
   layers:
   - Default
   - TransparentFX
