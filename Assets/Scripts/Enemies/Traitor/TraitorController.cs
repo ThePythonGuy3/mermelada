@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class TraitorController : EnemyController
 {
@@ -13,6 +14,7 @@ public class TraitorController : EnemyController
     private EnemyMover enemyMover;
 
     [SerializeField] private TimeHealthAdder tHA;
+    [SerializeField] private GameObject boton;
 
     private float tHATimer = 0f;
 
@@ -50,6 +52,12 @@ public class TraitorController : EnemyController
 
             GameObject.FindFirstObjectByType<Manager>().Unlock();
 
+            GameObject botono = Instantiate(boton, transform.position, transform.rotation);
+            botono.GetComponent<TimeHealthAdder>().onDestroy = () =>
+            {
+                SceneManager.LoadScene("LoreFinal");
+            };
+            
             Destroy(gameObject);
         }
     }
