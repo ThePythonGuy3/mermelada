@@ -22,6 +22,8 @@ public class Dash : MonoBehaviour
             float rotationZ = _playerLook.GetMouseAngle();
             Quaternion rotation = Quaternion.Euler(0, 0, rotationZ);
             Vector3 target = Helpers.CalculateTargetPosition(transform.position, rotation, _dashDistance);
+
+            //if (hitToTest.collider.bounds.Contains(telePosition))
             StartCoroutine(Helpers.LerpComplexPosition(transform, transform.position, target, _dashDuration, _dashProgressCurve));
 
             _currentTime = 0;

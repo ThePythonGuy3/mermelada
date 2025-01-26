@@ -58,11 +58,12 @@ public class Bullet : MonoBehaviour
             Tank tank = other.gameObject.GetComponent<Tank>();
             tank.DestroyTank();
         }
-        /*else if (other.CompareTag("Enemy") || other.CompareTag("Player"))
+        else if (other.CompareTag("Enemy"))
         {
             DestroyBullet();
-            // other.GetComponent<Character>().LoseHealth(_damage);
-        }*/
+            BulletAccepter a = other.GetComponent<BulletAccepter>();
+            if (a != null) a.OnHit();
+        }
     }
 
     public bool BulleteCanHeal()

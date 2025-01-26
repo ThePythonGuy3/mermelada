@@ -6,6 +6,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     [SerializeField] private MapLoader mapLoader;
 
+    [SerializeField] private Manager manager;
+
     private Camera camera;
 
     private Vector3 pos, target, preTarget, origin;
@@ -92,6 +94,8 @@ public class CameraController : MonoBehaviour
 
             transition = 1;
             transitionSpeed = bossRoom ? 0.25f : 1f;
+
+            if (Vector3.Distance(target, Vector3.zero) > 14) manager.LoadArea(new Vector2Int((int) target.x, (int) target.y), bossRoom);
         }
 
         if (transition > 0f)

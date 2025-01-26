@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 24
       width: 8
       height: 8
-    spriteID: f9f1f160f670c964ca946168c2ab47f9
+    spriteID: 38ee73310b01bd94881aec2f2f88436b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -156,7 +156,7 @@ ScriptedImporter:
       y: 4
       width: 12
       height: 12
-    spriteID: 9b46f6a8a00299644a6f60627f905783
+    spriteID: 6007cc39ae995ed43acd11b58507a9ba
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -182,7 +182,7 @@ ScriptedImporter:
         y: 2
         width: 8
         height: 8
-      spriteId: f9f1f160f670c964ca946168c2ab47f9
+      spriteId: 38ee73310b01bd94881aec2f2f88436b
     - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
@@ -191,7 +191,7 @@ ScriptedImporter:
         y: 0
         width: 12
         height: 12
-      spriteId: 9b46f6a8a00299644a6f60627f905783
+      spriteId: 6007cc39ae995ed43acd11b58507a9ba
     linkedCells: []
     parentIndex: -1
   platformSettings:
