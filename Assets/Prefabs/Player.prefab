@@ -398,7 +398,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeDamagePerShoot: 5
+  _playerHealth: {fileID: 0}
   _speed: 64
+  redOverlay: {fileID: 0}
+  deathFigure: {fileID: 0}
+  menuButton: {fileID: 0}
+  deathText: {fileID: 0}
+  deathPhrases:
+  - Pop goes the hero!
+  - So much for your brave little bubble.
+  - You were always destined to burst.
+  - Fragile as ever, Bob.
+  - All that effort... for nothing.
+  - Even bubbles can't escape their fate.
+  - "Heroes don\u2019t last\u2014especially not you."
+  - "You\u2019re not floating away this time."
+  - I warned you, bubbles always break.
+  - Goodbye, Bob. You were... disposable.
+  delayBeforeUI: 2
+  deathUIController: {fileID: 0}
+  _animator: {fileID: 7860052455138774403}
 --- !u!114 &226819976894155738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822a71eb5c6482d459d4f805c45c78b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTimeHealth: 120
+  _maxTimeHealth: 1200
   _slider: {fileID: 0}
   _currentTimeHealthText: {fileID: 0}
   _timeHealthBarReactionstText: {fileID: 0}
@@ -456,33 +475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1a6a3a10c5f8f4fbaf20ebd591e284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashDistance: 8
-  _dashDuration: 0.3
-  _dashCouldwon: 6
-  _dashProgressCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  dashEffect: {fileID: 0}
+  dashForce: 25
+  dashDuration: 0.5
+  dashCooldown: 1
+  isDashing: 0
 --- !u!114 &5007793503074414854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,6 +624,8 @@ GameObject:
   - component: {fileID: 8454567447103811815}
   - component: {fileID: 8326317714748237493}
   - component: {fileID: 1899007636205869510}
+  - component: {fileID: 7860052455138774403}
+  - component: {fileID: 2670915422742663209}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -720,3 +719,37 @@ MonoBehaviour:
   yHoverMult: 0.1
   scaleTimeMult: 1
   yHoverTimeMult: -0.6
+--- !u!95 &7860052455138774403
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234223302328589641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cae61269e699eee458502b833e94d9f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2670915422742663209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234223302328589641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42e641aba7907641a62e65bb7fdf606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

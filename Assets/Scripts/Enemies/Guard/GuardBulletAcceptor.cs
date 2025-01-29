@@ -9,6 +9,8 @@ public class GuardBulletAcceptor : BulletAccepter
 
     private Animator _scientistAnimatior;
 
+    private bool alive = true;
+
     private void Awake()
     {
         _scientistAnimatior = _scientistSprite.GetComponent<Animator>();
@@ -16,6 +18,12 @@ public class GuardBulletAcceptor : BulletAccepter
 
     public override void OnHit()
     {
+        if (!alive) return;
+
+        alive = false;
+
+        GetComponent<BoxCollider2D>().enabled = false;
+
         GameObject.FindFirstObjectByType<Manager>().Kill();
 
         gameObject.GetComponent<NavMeshAgent>().enabled = false;

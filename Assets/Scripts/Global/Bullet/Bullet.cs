@@ -49,11 +49,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Wall"))
+        /*if (other.CompareTag("Wall"))
         {
             DestroyBullet();
         }
-        else if (other.CompareTag("BubbleTank"))
+        else */if (other.CompareTag("BubbleTank"))
         {
             Tank tank = other.gameObject.GetComponent<Tank>();
             tank.DestroyTank();

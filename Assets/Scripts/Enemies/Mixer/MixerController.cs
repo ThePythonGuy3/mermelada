@@ -56,7 +56,7 @@ public class MixerController : EnemyController
 
         if (health <= 0)
         {
-            foreach (Object obj in Resources.FindObjectsOfTypeAll<EnemyController>())
+            /*foreach (Object obj in Resources.FindObjectsOfTypeAll<EnemyController>())
             {
                 if (obj.GetType() == typeof(GameObject))
                 {
@@ -65,7 +65,7 @@ public class MixerController : EnemyController
                         Destroy((GameObject) obj);
                     }
                 }
-            }
+            }*/
 
             GameObject.FindFirstObjectByType<Manager>().Unlock();
 
@@ -108,7 +108,10 @@ public class MixerController : EnemyController
                 GameObject obj = Instantiate(scientist, transform.position + new Vector3(Mathf.Cos(angle) * 3, Mathf.Sin(angle) * 3, 1), transform.rotation);
 
                 EnemyMover mover = obj.GetComponent<EnemyMover>();
-                if (mover != null) mover.player = GameObject.FindFirstObjectByType<Player>().gameObject;
+                if (mover != null) mover.player = player;
+
+                Scientific_1 sci1 = obj.GetComponent<Scientific_1>();
+                if (sci1 != null) sci1.player = player;
 
                 angle += (float)((2 * Mathf.PI) / n);
             }

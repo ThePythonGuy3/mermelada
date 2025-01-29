@@ -8,6 +8,8 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private Manager manager;
 
+    [SerializeField] private GameObject barrier;
+
     private Camera camera;
 
     private Vector3 pos, target, preTarget, origin;
@@ -20,11 +22,23 @@ public class CameraController : MonoBehaviour
 
     private int skipCounter = 200;
 
-    [SerializeField] public bool allowTransition = true;
+    [SerializeField] private bool allowTransition = true;
 
     void Start()
     {
         camera = GetComponent<Camera>();
+    }
+
+    public void Lock()
+    {
+        allowTransition = false;
+        barrier.SetActive(true);
+    }
+
+    public void Unlock()
+    {
+        allowTransition = true;
+        barrier.SetActive(false);
     }
 
     // Update is called once per frame

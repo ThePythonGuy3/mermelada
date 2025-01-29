@@ -54,6 +54,28 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         _playerHealth = GetComponent<PlayerHealth>();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("HealthAdder"))
+        {
+            AddTimeHealth(other);
+        }
+    }
+
+    private void AddTimeHealth(Collider2D other)
+    {
+        TimeHealthAdder timeHealthAdder = other.GetComponent<TimeHealthAdder>();
+        if (timeHealthAdder.isMaxTimeHealth)
+        {
+            _playerHealth.AddToMaxTimeHealth(timeHealthAdder.timeHealthToAdd);
+        }
+        else
+        {
+            _playerHealth.AddToTimeHealth(timeHealthAdder.timeHealthToAdd);
+        }
+        timeHealthAdder.DestroyHealthAdder();
+    }
+
     private void Start()
     {
         // Inicialización de la UI

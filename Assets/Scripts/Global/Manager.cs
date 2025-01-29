@@ -9,13 +9,13 @@ public class Manager : MonoBehaviour
 
     public void Lock()
     {
-        cameraController.allowTransition = false;
+        cameraController.Lock();
     }
 
     public void Unlock()
     {
         remainingEnemies = 0;
-        cameraController.allowTransition = true;
+        cameraController.Unlock();
     }
 
     public void LoadArea(Vector2Int center, bool bossRoom)

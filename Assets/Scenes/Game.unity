@@ -1018,7 +1018,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2027,10 +2027,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 1733403184}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
       propertyPath: deathText
       value: 
       objectReference: {fileID: 26957992}
@@ -2047,57 +2043,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 222633899}
     - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: delayBeforeUI
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
       propertyPath: deathUIController
       value: 
       objectReference: {fileID: 873996908}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: deathPhrases.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[0]'
-      value: Pop goes the hero!
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[1]'
-      value: So much for your brave little bubble.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[2]'
-      value: You were always destined to burst.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[3]'
-      value: Fragile as ever, Bob.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[4]'
-      value: All that effort... for nothing.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[5]'
-      value: Even bubbles can't escape their fate.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[6]'
-      value: "Heroes don\u2019t last\u2014especially not you."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[7]'
-      value: "You\u2019re not floating away this time."
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[8]'
-      value: I warned you, bubbles always break.
-      objectReference: {fileID: 0}
-    - target: {fileID: 3371596789262513130, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: 'deathPhrases.Array.data[9]'
-      value: Goodbye, Bob. You were... disposable.
-      objectReference: {fileID: 0}
     - target: {fileID: 6017726434382267038, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2106,10 +2054,6 @@ PrefabInstance:
       propertyPath: _slider
       value: 
       objectReference: {fileID: 1182474987}
-    - target: {fileID: 7368676185728788470, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      propertyPath: _maxTimeHealth
-      value: 1200
-      objectReference: {fileID: 0}
     - target: {fileID: 7368676185728788470, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
       propertyPath: _currentTimeHealthText
       value: 
@@ -2161,13 +2105,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6234223302328589641, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1733403184}
-    - targetCorrespondingSourceObject: {fileID: 6234223302328589641, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1733403185}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
 --- !u!1 &1619192379
 GameObject:
@@ -2351,45 +2289,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698181874}
   m_CullTransparentMesh: 1
---- !u!1 &1733403180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6234223302328589641, guid: baaef7995f6edac48a1a0b2128c068f0, type: 3}
-  m_PrefabInstance: {fileID: 1615535661}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1733403184
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733403180}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cae61269e699eee458502b833e94d9f1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1733403185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733403180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b42e641aba7907641a62e65bb7fdf606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1791963631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3078,10 +2977,6 @@ PrefabInstance:
     - target: {fileID: 4912188104327547800, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
       propertyPath: m_Name
       value: Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388764392549020176, guid: 0647701d7bd4a5a4cafa61b382bdfedb, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
